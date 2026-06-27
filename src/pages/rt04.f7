@@ -1,0 +1,308 @@
+<template>
+    <div class="page address-page" data-name="alamat">
+
+        <div class="navbar navbar-center">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner sliding">
+                <div class="left">
+                    <a href="#" class="link icon-only back">
+                        <i class="f7-icons">arrow_left</i>
+                    </a>
+                </div>
+                <div class="title">Alamat Pengiriman</div>
+                <div class="right">
+                    <a href="/tambah-alamat/" class="link icon-only">
+                        <i class="f7-icons">plus</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-content dashboard-bg">
+            <div class="dashboard-wrapper">
+
+                <div class="block no-margin-vertical quick-add-address">
+                    <a href="/tambah-alamat/" class="button button-fill action-btn btn-dashed">
+                        <i class="f7-icons margin-right-xs">plus_circle_fill</i> Tambah Alamat Baru
+                    </a>
+                </div>
+
+                <div class="block-title section-title">Alamat Tersimpan</div>
+
+                <div class="card glass-card address-card active-address-border">
+                    <div class="card-content card-content-padding">
+                        <div class="address-header">
+                            <div class="address-type-tag">
+                                <i class="f7-icons color-green-icon">house_fill</i>
+                                <span>Rumah</span>
+                            </div>
+                            <span class="badge color-green">Utama</span>
+                        </div>
+
+                        <div class="address-body">
+                            <h4 class="receiver-name">Mufid Rofi' Ali <span class="receiver-phone">(+62
+                                    812-3456-7890)</span></h4>
+                            <p class="address-details">
+                                Jl. Sawo Manila No.61, RT.14/RW.3, Pasar Minggu, Kec. Pasar Minggu, Kota Jakarta
+                                Selatan, Daerah Khusus Ibukota Jakarta 12520
+                            </p>
+                            <p class="address-notes">
+                                <i class="f7-icons">info_circle</i> Patokan: Dekat Kampus Universitas Nasional (UNAS),
+                                gerbang depan warna biru.
+                            </p>
+                        </div>
+
+                        <div class="address-actions-divider"></div>
+
+                        <div class="address-footer-actions">
+                            <a href="/Edit/" class="link edit-address-link"><i class="f7-icons">pencil_circle_fill</i>
+                                Ubah Alamat</a>
+                            <span class="actions-spacer">|</span>
+                            <a @click="${konfirmasiHapus}" href="#" class="link delete-address-link color-red-text"><i
+                                    class="f7-icons">trash_fill</i> Hapus</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card glass-card address-card">
+                    <div class="card-content card-content-padding">
+                        <div class="address-header">
+                            <div class="address-type-tag">
+                                <i class="f7-icons color-blue-icon">briefcase_fill</i>
+                                <span>Kantor / Kos</span>
+                            </div>
+                            <button class="button button-small button-outline set-main-btn border-blue-text">Atur
+                                Utama</button>
+                        </div>
+
+                        <div class="address-body">
+                            <h4 class="receiver-name">Mufid Rofi' Ali <span class="receiver-phone">(+62
+                                    812-9876-5432)</span></h4>
+                            <p class="address-details">
+                                Jl. RM. Harsono No.1, Ragunan, Kec. Pasar Minggu, Kota Jakarta Selatan, Daerah Khusus
+                                Ibukota Jakarta 12550
+                            </p>
+                        </div>
+
+                        <div class="address-actions-divider"></div>
+
+                        <div class="address-footer-actions">
+                            <a href="/Edit/" class="link edit-address-link"><i class="f7-icons">pencil_circle_fill</i>
+                                Ubah Alamat</a>
+                            <span class="actions-spacer">|</span>
+                            <a @click="${konfirmasiHapus}" href="#" class="link delete-address-link color-red-text"><i
+                                    class="f7-icons">trash_fill</i> Hapus</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</template>
+
+<style>
+    /* Tombol Tambah Desain Dashed Border */
+    .quick-add-address {
+        margin-bottom: 20px !important;
+    }
+
+    .btn-dashed {
+        background: rgba(255, 255, 255, 0.03) !important;
+        color: #60a5fa !important;
+        border: 2px dashed rgba(96, 165, 250, 0.4) !important;
+        box-shadow: none !important;
+    }
+
+    .btn-dashed:active {
+        background: rgba(96, 165, 250, 0.1) !important;
+    }
+
+    /* Arsitektur Kartu Alamat */
+    .address-card {
+        border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    }
+
+    /* Highlight Khusus Alamat Utama */
+    .active-address-border {
+        border-left: 4px solid #10b981 !important;
+        background: rgba(16, 185, 129, 0.02) !important;
+    }
+
+    .address-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+
+    .address-type-tag {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .address-type-tag .f7-icons {
+        font-size: 18px;
+    }
+
+    .address-type-tag span {
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+    /* Konten Informasi Rumah */
+    .address-body {
+        margin-bottom: 14px;
+    }
+
+    .receiver-name {
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 700;
+        margin: 0 0 6px 0;
+    }
+
+    .receiver-phone {
+        color: #94a3b8;
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    .address-details {
+        color: #cbd5e1;
+        font-size: 12px;
+        line-height: 1.5;
+        margin: 0 0 8px 0;
+    }
+
+    .address-notes {
+        color: #f59e0b;
+        font-size: 11px;
+        margin: 0;
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        background: rgba(245, 158, 11, 0.08);
+        padding: 6px 10px;
+        border-radius: 8px;
+    }
+
+    .address-notes .f7-icons {
+        font-size: 13px;
+        margin-top: 1px;
+        flex-shrink: 0;
+    }
+
+    /* Pembatas Seksi Aksi */
+    .address-actions-divider {
+        height: 1px;
+        background: rgba(255, 255, 255, 0.08);
+        margin: 12px 0;
+    }
+
+    /* Tombol Fungsionalitas Kartu */
+    .address-footer-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .edit-address-link {
+        color: #60a5fa !important;
+        font-size: 12px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .edit-address-link .f7-icons {
+        font-size: 14px;
+    }
+
+    .delete-address-link {
+        font-size: 12px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .delete-address-link .f7-icons {
+        font-size: 14px;
+    }
+
+    .color-red-text {
+        color: #ef4444 !important;
+    }
+
+    .actions-spacer {
+        color: rgba(255, 255, 255, 0.15);
+        font-size: 12px;
+    }
+
+    /* Tombol Set Utama */
+    .set-main-btn {
+        border-radius: 6px;
+        font-weight: 600;
+        text-transform: none;
+        height: 24px;
+        line-height: 22px;
+        padding: 0 10px;
+        font-size: 11px;
+    }
+
+    /* Blokir Aksi Hapus Alamat Utama */
+    .disabled-delete {
+        color: #475569 !important;
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+
+    /* Warna Icon Penanda */
+    .color-green-icon {
+        color: #10b981;
+    }
+
+    .color-blue-icon {
+        color: #3b82f6;
+    }
+
+    .margin-right-xs {
+        margin-right: 4px;
+    }
+</style>
+
+<script>
+    export default (props, { $f7, $on }) => {
+        $on('pageInit', () => {
+            // Tempat menambahkan handler klik hapus alamat atau ubah alamat utama
+        });
+
+        // 2. FUNGSI HAPUS ALAMAT (DENGAN KONFIRMASI)
+        const konfirmasiHapus = () => {
+            $f7.dialog.confirm(
+                'Apakah Anda yakin ingin menghapus alamat pengiriman ini secara permanen?',
+                'Hapus Alamat',
+                () => {
+                    // Blok ini dijalankan jika pengguna menekan tombol "OK" / "Ya"
+                    $f7.dialog.preloader('Menghapus alamat...');
+
+                    // Simulasi AJAX hapus ke server (1 detik)
+                    setTimeout(() => {
+                        $f7.dialog.close();
+                        $f7.dialog.alert('Alamat telah berhasil dihapus.', 'Terhapus', () => {
+                            $f7.views.main.router.back(); // Kembali ke daftar alamat
+                        });
+                        console.log('Alamat dengan ID terkait telah dihapus.');
+                    }, 1000);
+                }
+            );
+        };
+
+        return $render;
+    };
+</script>

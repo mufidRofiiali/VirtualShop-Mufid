@@ -1,0 +1,360 @@
+<template>
+    <div class="page register-page" data-name="register">
+
+        <div class="navbar navbar-center no-shadow">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner sliding">
+                <div class="left">
+                    <a href="#" class="link icon-only back">
+                        <i class="f7-icons">arrow_left</i>
+                    </a>
+                </div>
+                <div class="title">Daftar Akun</div>
+                <div class="right"></div>
+            </div>
+        </div>
+
+        <div class="page-content register-bg display-flex justify-content-center align-items-center">
+
+            <div class="register-wrapper">
+                <div class="register-brand text-center">
+                    <div class="brand-icon-box">
+                        <i class="f7-icons">person_badge_plus_fill</i>
+                    </div>
+                    <h1 class="brand-title">Bergabung<span> Bersama Kami</span></h1>
+                    <p class="brand-tagline">Mulai petualangan belanja masa depan Anda</p>
+                </div>
+
+                <div class="card glass-card register-card">
+                    <div class="card-content card-content-padding">
+
+                        <form id="register-form">
+                            <div class="list no-hairlines-md custom-input-list">
+                                <ul>
+                                    <li class="item-content item-input item-input-with-info">
+                                        <div class="item-media">
+                                            <i class="f7-icons field-icon">person_fill</i>
+                                        </div>
+                                        <div class="item-inner">
+                                            <div class="item-title item-label">Nama Lengkap</div>
+                                            <div class="item-input-wrap">
+                                                <input type="text" name="fullname"
+                                                    placeholder="Masukkan nama lengkap Anda" required validate />
+                                                <span class="input-clear-button"></span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="item-content item-input item-input-with-info">
+                                        <div class="item-media">
+                                            <i class="f7-icons field-icon">at</i>
+                                        </div>
+                                        <div class="item-inner">
+                                            <div class="item-title item-label">Username</div>
+                                            <div class="item-input-wrap">
+                                                <input type="text" name="username" placeholder="Buat nama pengguna unik"
+                                                    required validate />
+                                                <span class="input-clear-button"></span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="item-content item-input item-input-with-info">
+                                        <div class="item-media">
+                                            <i class="f7-icons field-icon">envelope_fill</i>
+                                        </div>
+                                        <div class="item-inner">
+                                            <div class="item-title item-label">Alamat Email</div>
+                                            <div class="item-input-wrap">
+                                                <input type="email" name="email" placeholder="contoh@email.com" required
+                                                    validate />
+                                                <span class="input-clear-button"></span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="item-content item-input item-input-with-info">
+                                        <div class="item-media">
+                                            <i class="f7-icons field-icon">lock_shield_fill</i>
+                                        </div>
+                                        <div class="item-inner">
+                                            <div class="item-title item-label">Kata Sandi Baru</div>
+                                            <div class="item-input-wrap">
+                                                <input type="password" name="password" placeholder="••••••••" required
+                                                    validate />
+                                                <span class="input-clear-button"></span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="display-flex align-items-center register-utilities">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="terms" required validate />
+                                    <i class="icon-checkbox"></i>
+                                    <span class="checkbox-label">Saya menyetujui <a href="#"
+                                            class="link terms-link">Syarat & Ketentuan</a></span>
+                                </label>
+                            </div>
+
+                            <div class="block no-margin-horizontal button-block">
+                                <button type="submit" class="button button-fill register-submit-btn">
+                                    Daftar Sekarang <i class="f7-icons margin-left-half">checkmark_seal_fill</i>
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+                <div class="register-footer text-center">
+                    <p>Sudah punya akun? <a href="#" class="link back-to-login back">Masuk Sekarang</a></p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</template>
+
+<style>
+    /* Base Configuration & Fonts */
+    .register-page {
+        font-family: -apple-system, SF Pro Text, Roboto, sans-serif;
+    }
+
+    /* Navbar Styling */
+    .register-page .navbar .navbar-bg {
+        background-color: #111827;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .register-page .navbar .title {
+        color: #ffffff;
+        font-weight: 800;
+    }
+
+    .register-page .navbar .f7-icons {
+        color: #00e5ff;
+    }
+
+    /* Cyberpunk Background Engine */
+    .register-bg {
+        background-color: #0b0f19;
+        background-image:
+            radial-gradient(circle at top left, rgba(0, 229, 255, 0.15), transparent 45%),
+            radial-gradient(circle at bottom right, rgba(32, 93, 247, 0.2), transparent 45%);
+        background-attachment: fixed;
+        min-height: 100vh;
+        box-sizing: border-box;
+        padding: 24px;
+    }
+
+    .register-wrapper {
+        width: 100%;
+        max-width: 400px;
+        margin-top: 40px;
+        /* Jarak aman dari navbar */
+        animation: fadeInRegister 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes fadeInRegister {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Brand / Logo Section */
+    .register-brand {
+        margin-bottom: 24px;
+    }
+
+    .brand-icon-box {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #00e5ff, #205DF7);
+        border-radius: 20px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 24px rgba(0, 229, 255, 0.3);
+        margin-bottom: 12px;
+    }
+
+    .brand-icon-box .f7-icons {
+        font-size: 26px;
+        color: #ffffff;
+    }
+
+    .brand-title {
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: 800;
+        margin: 0;
+    }
+
+    .brand-title span {
+        color: #00e5ff;
+    }
+
+    .brand-tagline {
+        color: #94a3b8;
+        font-size: 13px;
+        margin: 4px 0 0 0;
+    }
+
+    /* Core Glassmorphism Card Formula */
+    .register-card {
+        background: rgba(255, 255, 255, 0.04) !important;
+        backdrop-filter: blur(25px) !important;
+        -webkit-backdrop-filter: blur(25px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        border-radius: 24px !important;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5) !important;
+        margin: 0 !important;
+    }
+
+    /* Input Fields Customization */
+    .custom-input-list {
+        margin: 12px 0 20px 0 !important;
+        background: transparent !important;
+    }
+
+    .custom-input-list ul {
+        background: transparent !important;
+        border: none !important;
+    }
+
+    .custom-input-list ul::before,
+    .custom-input-list ul::after {
+        display: none !important;
+    }
+
+    .custom-input-list .item-content {
+        padding-left: 0 !important;
+        margin-bottom: 12px;
+    }
+
+    .custom-input-list .field-icon {
+        font-size: 22px;
+        color: #00e5ff;
+        margin-top: 20px;
+    }
+
+    .custom-input-list .item-label {
+        color: #94a3b8 !important;
+        font-size: 11px !important;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .custom-input-list .item-input-wrap input {
+        color: #ffffff !important;
+        font-size: 15px !important;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.1) !important;
+        height: 42px;
+    }
+
+    .custom-input-list .item-input-wrap input:focus {
+        border-bottom-color: #00e5ff !important;
+    }
+
+    /* Utilities */
+    .register-utilities {
+        margin: 4px 4px 24px 4px;
+        font-size: 13px;
+    }
+
+    .register-utilities .checkbox-label {
+        color: #cbd5e1;
+        margin-left: 6px;
+    }
+
+    .register-utilities .icon-checkbox {
+        border-color: rgba(255, 255, 255, 0.3);
+        border-radius: 6px;
+    }
+
+    .terms-link {
+        color: #00e5ff !important;
+        font-weight: 500;
+    }
+
+    /* Primary Action Button */
+    .button-block {
+        margin-bottom: 16px;
+    }
+
+    .register-submit-btn {
+        background: linear-gradient(90deg, #00e5ff, #205DF7) !important;
+        color: #ffffff !important;
+        height: 48px;
+        border-radius: 14px;
+        font-size: 15px;
+        font-weight: 700;
+        text-transform: none;
+        box-shadow: 0 6px 20px rgba(0, 229, 255, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Footer Links */
+    .register-footer {
+        margin-top: 24px;
+    }
+
+    .register-footer p {
+        color: #94a3b8;
+        font-size: 13px;
+    }
+
+    .back-to-login {
+        color: #60a5fa !important;
+        font-weight: 600;
+    }
+</style>
+
+<script>
+    export default (props, { $f7, $on }) => {
+
+        $on('pageInit', () => {
+            const form = document.getElementById('register-form');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                // Mengonversi data form menjadi objek JavaScript
+                const formData = $f7.form.convertToData('#register-form');
+
+                // Tampilkan animasi pembuatan akun
+                $f7.dialog.preloader('Membuat Akun Enkripsi...');
+
+                setTimeout(() => {
+                    $f7.dialog.close();
+
+                    // Tampilkan notifikasi toast sukses mendaftar
+                    $f7.toast.create({
+                        text: `Registrasi Berhasil! Selamat bergabung, ${formData.fullname}.`,
+                        position: 'center',
+                        closeTimeout: 3000,
+                        destroyOnClose: true
+                    }).open();
+
+                    // Arahkan otomatis kembali ke halaman login utama setelah sukses
+                    $f7.views.main.router.back();
+
+                }, 2000);
+            });
+        });
+
+        return $render;
+    };
+</script>

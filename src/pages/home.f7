@@ -1,0 +1,446 @@
+<template>
+  <div class="page login-page" data-name="login">
+
+    <div class="page-content login-bg display-flex justify-content-center align-items-center">
+
+      <div class="login-wrapper">
+        <div class="login-brand text-center">
+          <div class="brand-icon-box">
+            <i class="f7-icons">cart_fill_badge_plus</i>
+          </div>
+          <h1 class="brand-title">Virtual<span>Shop</span></h1>
+          <p class="brand-tagline">Masa Depan Belanja di Tangan Anda</p>
+        </div>
+
+        <div class="card glass-card login-card">
+          <div class="card-content card-content-padding">
+
+            <form id="login-form">
+              <div class="list no-hairlines-md custom-input-list">
+                <ul>
+                  <li class="item-content item-input item-input-with-info">
+                    <div class="item-media">
+                      <i class="f7-icons field-icon">person_crop_circle_fill</i>
+                    </div>
+                    <div class="item-inner">
+                      <div class="item-title item-label">Username atau Email</div>
+                      <div class="item-input-wrap">
+                        <input type="text" name="username" placeholder="Masukkan username Anda" required validate />
+                        <span class="input-clear-button"></span>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="item-content item-input item-input-with-info">
+                    <div class="item-media">
+                      <i class="f7-icons field-icon">lock_shield_fill</i>
+                    </div>
+                    <div class="item-inner">
+                      <div class="item-title item-label">Kata Sandi</div>
+                      <div class="item-input-wrap">
+                        <input type="password" name="password" placeholder="••••••••" required validate />
+                        <span class="input-clear-button"></span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="display-flex justify-content-between align-items-center login-utilities">
+                <label class="checkbox">
+                  <input type="checkbox" name="remember-me" checked />
+                  <i class="icon-checkbox"></i>
+                  <span class="checkbox-label"></span>
+                </label>
+              </div>
+
+              <a href="/Forgot/" class="link forgot-link">Forgot Password?</a>
+              <div class="block no-margin-horizontal button-block">
+                <button type="submit" class="button button-fill login-submit-btn">
+                  Masuk Sekarang <i class="f7-icons margin-left-half">arrow_right_circle_fill</i>
+                </button>
+              </div>
+            </form>
+
+            <div class="login-footer text-center">
+              <p>Belum punya akun? <a href="/Register/" class="link register-link">Daftar Sekarang</a></p>
+            </div>
+
+            <div class="divider-text"><span>Atau masuk dengan</span></div>
+
+            <div class="grid grid-cols-2 grid-gap social-login-grid">
+              <a href="#" id="google-login-btn" class="button button-outline social-btn google-btn">
+                <i class="f7-icons">logo_google</i> Google
+              </a>
+              <a href="#" class="button button-outline social-btn github-btn">
+                <i class="f7-icons">logo_github</i> GitHub
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</template>
+
+<style>
+  /* Base Configuration & Fonts */
+  .login-page {
+    font-family: -apple-system, SF Pro Text, Roboto, sans-serif;
+  }
+
+  /* Dynamic Cyberpunk Background Engine */
+  .login-bg {
+    background-color: #0b0f19;
+    background-image:
+      radial-gradient(circle at top left, rgba(32, 93, 247, 0.25), transparent 45%),
+      radial-gradient(circle at bottom right, rgba(239, 68, 68, 0.18), transparent 45%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 24px;
+  }
+
+  .login-wrapper {
+    width: 100%;
+    max-width: 400px;
+    animation: fadeInPage 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes fadeInPage {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Brand / Logo Section */
+  .login-brand {
+    margin-bottom: 28px;
+  }
+
+  .brand-icon-box {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #205DF7, #00e5ff);
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(32, 93, 247, 0.4);
+    margin-bottom: 12px;
+  }
+
+  .brand-icon-box .f7-icons {
+    font-size: 28px;
+    color: #000;
+  }
+
+  .brand-title {
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: 0.5px;
+  }
+
+  .brand-title span {
+    color: #60a5fa;
+  }
+
+  .brand-tagline {
+    color: #94a3b8;
+    font-size: 13px;
+    margin: 4px 0 0 0;
+  }
+
+  /* Core Glassmorphism Card Formula */
+  .login-card {
+    background: rgba(255, 255, 255, 0.04) !important;
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 24px !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5) !important;
+    margin: 0 !important;
+    overflow: hidden;
+  }
+
+  /* Input Fields Customization */
+  .custom-input-list {
+    margin: 12px 0 20px 0 !important;
+    background: transparent !important;
+  }
+
+  .custom-input-list ul {
+    background: transparent !important;
+    border: none !important;
+  }
+
+  .custom-input-list ul::before,
+  .custom-input-list ul::after {
+    display: none !important;
+  }
+
+  .custom-input-list .item-content {
+    padding-left: 0 !important;
+    margin-bottom: 16px;
+  }
+
+  .custom-input-list .field-icon {
+    font-size: 22px;
+    color: #60a5fa;
+    margin-top: 20px;
+  }
+
+  .custom-input-list .item-label {
+    color: #94a3b8 !important;
+    font-size: 11px !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .custom-input-list .item-input-wrap input {
+    color: #ffffff !important;
+    font-size: 15px !important;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1) !important;
+    height: 42px;
+    transition: border-color 0.3s ease;
+  }
+
+  .custom-input-list .item-input-wrap input:focus {
+    border-bottom-color: #205DF7 !important;
+  }
+
+  /* Utilities (Remember me & Forgot Password) */
+  .login-utilities {
+    margin: 0 4px 24px 4px;
+    font-size: 13px;
+  }
+
+  .login-utilities .checkbox-label {
+    color: #cbd5e1;
+    margin-left: 4px;
+  }
+
+  .login-utilities .icon-checkbox {
+    border-color: rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+  }
+
+  .forgot-link {
+    color: #60a5fa !important;
+    font-weight: 500;
+  }
+
+  /* Primary Action Button */
+  .button-block {
+    margin-bottom: 24px;
+  }
+
+  .login-submit-btn {
+    background: linear-gradient(90deg, #205DF7, #1e40af) !important;
+    color: #ffffff !important;
+    height: 48px;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: none;
+    box-shadow: 0 6px 20px rgba(32, 93, 247, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .login-submit-btn:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
+
+  /* Dividers */
+  .divider-text {
+    text-align: center;
+    position: relative;
+    margin: 24px 0;
+  }
+
+  .divider-text::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+  }
+
+  .divider-text span {
+    background: #111827;
+    padding: 0 12px;
+    color: #64748b;
+    font-size: 12px;
+    position: relative;
+    z-index: 2;
+    border-radius: 10px;
+  }
+
+  /* Social Logins Buttons */
+  .social-login-grid {
+    margin-bottom: 8px;
+  }
+
+  .social-btn {
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+    height: 42px;
+    border-radius: 12px;
+    text-transform: none;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .social-btn .f7-icons {
+    font-size: 18px;
+  }
+
+  .social-btn:active {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Footer Links */
+  .login-footer {
+    margin-top: 24px;
+  }
+
+  .login-footer p {
+    color: #94a3b8;
+    font-size: 13px;
+  }
+
+  .register-link {
+    color: #00e5ff !important;
+    font-weight: 600;
+  }
+</style>
+
+<script>
+  export default (props, { $f7, $on }) => {
+
+    $on('pageInit', () => {
+      const form = document.getElementById('login-form');
+
+      form.addEventListener('submit', (e) => {
+        // Mencegah reload halaman bawaan browser
+        e.preventDefault();
+
+        // Ambil data dari input form secara otomatis
+        const formData = $f7.form.convertToData('#login-form');
+        const username = formData.username;
+        const password = formData.password;
+
+        // Validasi tambahan sederhana (opsional)
+        if (!username || !password) {
+          $f7.dialog.alert('Harap isi semua kolom login!', 'Gagal');
+          return;
+        }
+
+        // Tampilkan animasi loading modern khas Framework7
+        $f7.dialog.preloader('Menyelaraskan Akun...');
+
+        // Simulasi proses autentikasi (misal cek ke API selama 1.5 detik)
+        setTimeout(() => {
+          // Tutup animasi loading
+          $f7.dialog.close();
+
+          // Berpindah secara mulus ke halaman utama (Dashboard)
+          $f7.views.main.router.navigate('/about/', {
+            animate: true,
+            pushState: true
+          });
+
+          // Memunculkan pesan toast selamat datang di halaman dashboard
+          $f7.toast.create({
+            text: `Selamat Datang Kembali, ${username}!`,
+            position: 'bottom',
+            closeTimeout: 2500,
+            destroyOnClose: true
+          }).open();
+
+        }, 1500);
+      });
+    });
+
+    $on('pageInit', () => {
+      // 1. LOGIKA SUBMIT FORM BIASA (YANG SUDAH ADA)
+      const form = document.getElementById('login-form');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = $f7.form.convertToData('#login-form');
+        handleSuccessLogin(formData.username || 'Mufid');
+      });
+
+      // 2. LOGIKA LOGIN DENGAN GOOGLE
+      const googleBtn = document.getElementById('google-login-btn');
+      googleBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        // Tampilkan loading khusus Google Auth
+        $f7.dialog.preloader('Menghubungkan ke Google...');
+
+        // Simulasi pembukaan SDK Google atau Popup Window
+        setTimeout(() => {
+          $f7.dialog.close();
+
+          // Simulasi data yang didapat setelah user memilih akun Google mereka
+          const googleUserSimulated = {
+            displayName: "Mufid Rofi' Ali",
+            email: "mufid.rofi@gmail.com"
+          };
+
+          // Panggil fungsi sukses masuk
+          handleSuccessLogin(googleUserSimulated.displayName);
+
+        }, 1800); // Waktu tunggu simulasi autentikasi Google
+      });
+
+      // REFACTOR: Fungsi reusable untuk mengalihkan halaman setelah sukses login
+      function handleSuccessLogin(nameToDisplay) {
+        $f7.dialog.preloader('Menyelaraskan Akun...');
+
+        setTimeout(() => {
+          $f7.dialog.close();
+
+          // Berhasil Login menuju Dashboard Utama Anda
+          $f7.views.main.router.navigate('/About/', {
+            reloadCurrent: true
+          });
+
+          // Notifikasi Selamat Datang Pop-up Ringkas
+          $f7.toast.create({
+            text: `Selamat Datang Kembali, ${nameToDisplay}!`,
+            position: 'bottom',
+            closeTimeout: 2500,
+            destroyOnClose: true
+          }).open();
+
+        }, 1000);
+      }
+    });
+    return $render;
+  };
+</script>

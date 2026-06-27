@@ -1,0 +1,290 @@
+<template>
+    <div class="page edit-profile-page" data-name="ubah-profil">
+
+        <!-- Navbar -->
+        <div class="navbar navbar-center">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner sliding">
+                <div class="left">
+                    <a href="#" class="link icon-only back">
+                        <i class="f7-icons">arrow_left</i>
+                    </a>
+                </div>
+                <div class="title">Edit Profil</div>
+                <div class="right">
+                    <!-- Tombol simpan cepat di navbar -->
+                    <a href="#" @click="${simpanProfil}" class="link icon-only color-blue-text">
+                        <i class="f7-icons">checkmark_alt</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Content -->
+        <div class="page-content dashboard-bg">
+            <div class="dashboard-wrapper">
+
+                <!-- Avatar Upload Section -->
+                <div class="card glass-card avatar-change-card">
+                    <div class="card-content card-content-padding text-center">
+                        <div class="avatar-upload-wrapper">
+                            <img src="/img/mupid.jpg" id="profile-preview-img" class="profile-avatar-large"
+                                alt="Mufid" />
+                            <label for="avatar-file-input" class="badge color-orange edit-avatar-label">
+                                <i class="f7-icons">camera_fill</i>
+                            </label>
+                            <input type="file" id="avatar-file-input" accept="image/*" @change="${handleAvatarChange}"
+                                style="display: none;" />
+                        </div>
+                        <p class="upload-tip">Ketuk ikon kamera untuk mengubah foto profil</p>
+                    </div>
+                </div>
+
+                <!-- Form Input Profil -->
+                <div class="block-title section-title">Informasi Pribadi</div>
+                <form id="edit-profile-form" class="list no-hairlines glass-form-list">
+                    <ul>
+                        <li class="item-content item-input">
+                            <div class="item-media">
+                                <div class="form-icon-box"><i class="f7-icons">person_fill</i></div>
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title item-label">Nama Lengkap</div>
+                                <div class="item-input-wrap">
+                                    <input type="text" name="nama" placeholder="Nama Anda" value="Mufid Rofi' Ali"
+                                        class="glass-field" required validate />
+                                    <span class="input-clear-button"></span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="item-content item-input">
+                            <div class="item-media">
+                                <div class="form-icon-box"><i class="f7-icons">envelope_fill</i></div>
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title item-label">Alamat Email</div>
+                                <div class="item-input-wrap">
+                                    <input type="email" name="email" placeholder="Email Anda"
+                                        value="mufid.rofi@unas.ac.id" class="glass-field" required validate />
+                                    <span class="input-clear-button"></span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="item-content item-input">
+                            <div class="item-media">
+                                <div class="form-icon-box"><i class="f7-icons">phone_fill</i></div>
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title item-label">Nomor Telepon</div>
+                                <div class="item-input-wrap">
+                                    <input type="tel" name="telepon" placeholder="No. Telepon" value="+62 812-3456-7890"
+                                        class="glass-field" required validate pattern="[0-9+ \-]*" />
+                                    <span class="input-clear-button"></span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="item-content item-input">
+                            <div class="item-media">
+                                <div class="form-icon-box"><i class="f7-icons">briefcase_fill</i></div>
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title item-label">Institusi / Pekerjaan</div>
+                                <div class="item-input-wrap">
+                                    <input type="text" name="pekerjaan" placeholder="Institusi"
+                                        value="Full Stack Developer • UNAS" class="glass-field" />
+                                    <span class="input-clear-button"></span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </form>
+
+                <!-- Action Button -->
+                <div class="block save-button-block">
+                    <button @click="${simpanProfil}" class="button button-fill action-btn btn-primary-gradient">
+                        <i class="f7-icons margin-right-xs">floppy_disk_fill</i> Simpan Perubahan
+                    </button>
+                    
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</template>
+
+<style>
+    /* Styling Area Mengubah Avatar */
+    .avatar-change-card {
+        margin: 4px 0 16px 0 !important;
+    }
+
+    .avatar-upload-wrapper {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 10px auto;
+    }
+
+    .edit-avatar-label {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: 2px solid #0b0f19;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .edit-avatar-label .f7-icons {
+        font-size: 14px;
+        color: white;
+    }
+
+    .upload-tip {
+        color: #94a3b8;
+        font-size: 11px;
+        margin: 0;
+    }
+
+    /* Form List Model Glassmorphism */
+    .glass-form-list {
+        margin: 0 0 24px 0 !important;
+        background: transparent !important;
+    }
+
+    .glass-form-list ul {
+        background: rgba(255, 255, 255, 0.04) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        border-radius: 16px !important;
+        overflow: hidden;
+        padding: 6px 0;
+    }
+
+    .glass-form-list .item-content {
+        padding-left: 16px;
+    }
+
+    /* Kotak Icon Input */
+    .form-icon-box {
+        width: 30px;
+        color: #60a5fa;
+        display: flex;
+        align-items: center;
+    }
+
+    .form-icon-box .f7-icons {
+        font-size: 18px;
+    }
+
+    /* Form Fields Customization */
+    .glass-form-list .item-label {
+        color: #94a3b8 !important;
+        font-size: 11px;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        margin-bottom: 2px;
+    }
+
+    .glass-field {
+        color: #ffffff !important;
+        font-size: 14px !important;
+        height: 38px !important;
+        background: transparent !important;
+    }
+
+    /* Garis bawah interaktif bawaan F7 */
+    .glass-form-list .item-input-wrap::after {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .glass-form-list .item-input-focused .item-input-wrap::after {
+        background-color: #205DF7 !important;
+    }
+
+    /* Tombol Bersihkan Input */
+    .glass-form-list .input-clear-button {
+        color: #94a3b8;
+    }
+
+    /* Tombol Simpan Gradasi */
+    .save-button-block {
+        margin: 24px 0;
+    }
+
+    .btn-primary-gradient {
+        background: linear-gradient(135deg, #205DF7, #1d4ed8) !important;
+        box-shadow: 0 4px 14px rgba(32, 93, 247, 0.3) !important;
+    }
+
+    .color-blue-text {
+        color: #60a5fa !important;
+    }
+
+    .margin-right-xs {
+        margin-right: 6px;
+    }
+</style>
+
+<script>
+    export default (props, { $f7, $on, $update }) => {
+
+        // Handler saat pengguna memilih foto baru
+        const handleAvatarChange = (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    // Update preview gambar secara instan di UI
+                    document.getElementById('profile-preview-img').src = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        };
+
+        // Fungsi menyimpan data profil
+        const simpanProfil = () => {
+            // Validasi form bawaan HTML5 & Framework7
+            const formElement = document.getElementById('edit-profile-form');
+            const isValid = formElement.checkValidity();
+
+            if (!isValid) {
+                $f7.dialog.alert('Harap isi semua kolom formulir dengan benar.', 'Validasi Gagal');
+                return;
+            }
+
+            // Mengambil data dari element form
+            const formData = $f7.form.convertToData('#edit-profile-form');
+
+            // Menampilkan loading indikator (Preloader)
+            $f7.dialog.preloader('Menyimpan perubahan...');
+
+            // Simulasi AJAX Request / Penyimpanan ke database (1.5 detik)
+            setTimeout(() => {
+                // Menutup preloader loading
+                $f7.dialog.close();
+
+                // Menampilkan alert sukses
+                $f7.dialog.alert('Profil Anda berhasil diperbarui!', 'Berhasil', () => {
+                    // Kembali ke halaman profil setelah menekan 'OK'
+                    $f7.views.main.router.back();
+                });
+
+                console.log('Data yang disimpan:', formData);
+            }, 1500);
+        };
+
+        return $render;
+    };
+</script>

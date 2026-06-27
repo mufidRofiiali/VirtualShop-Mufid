@@ -1,0 +1,694 @@
+<template>
+    <div class="page dashboard-page" data-name="katalog">
+
+        <div class="navbar navbar-center">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner sliding">
+                <div class="left">
+                    <a href="#" class="link icon-only back">
+                        <i class="f7-icons">arrow_left</i>
+                    </a>
+                </div>
+                <div class="title">TokoShop</div>
+                <div class="right">
+                    <li class="item-content no-list-style">
+                        <div class="item-inner">
+                            <div class="item-after">
+                                <label class="toggle toggle-init dark-mode-toggle">
+                                    <input type="checkbox" id="dark-mode-checkbox" checked />
+                                    <i class="toggle-icon"></i>
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-content dashboard-bg">
+            <div class="dashboard-wrapper">
+
+                <div class="block-title section-title no-margin-top">Slide Showcase</div>
+
+                <div class="block no-margin-horizontal swiper-block">
+                    <div class="swiper" id="mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide slide-blue">
+                                <div class="slide-overlay">
+                                    <h2>MarketPlace Produk Digital</h2>
+                                    <p>Welcome To My TokoShop</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide slide-green">
+                                <div class="slide-overlay">
+                                    <h2>Temukan Barang Favoritmu</h2>
+                                    <p>Kualitas terbaik dan produk paling update</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide slide-red">
+                                <div class="slide-overlay">
+                                    <h2>Pilih & Amankan Stoknya</h2>
+                                    <p>Modern My TokoShop System</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-next color-white"></div>
+                        <div class="swiper-button-prev color-white"></div>
+                    </div>
+                </div>
+
+                <div class="card glass-card catalog-header-card">
+                    <div class="card-content card-content-padding">
+                        <div class="searchbar searchbar-init custom-search">
+                            <div class="searchbar-inner">
+                                <div class="searchbar-input-wrap">
+                                    <input type="search" placeholder="Cari produk digital..." />
+                                    <i class="searchbar-icon"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="category-scroll">
+                            <a class="chip chip-active">Semua</a>
+                            <a href="/Teknologi/" class="chip">Elektronik</a>
+                            <a class="chip">Kendaraan</a>
+                            <a class="chip">Fashion</a>
+                            <a class="chip">Aksesoris</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-row">
+                    <select>
+                        <option>Harga</option>
+                        <option>Termurah</option>
+                        <option>Termahal</option>
+                    </select>
+                    <select>
+                        <option>Diskon/Promo</option>
+                    </select>
+                    <select>
+                        <option>Rating</option>
+                    </select>
+                    <select>
+                        <option>Terbaru</option>
+                    </select>
+                </div>
+
+                <div class="block-title section-title">Daftar Produk Pilihan</div>
+
+                <div class="grid grid-cols-2 grid-gap product-grid-layout">
+
+                    <div class="card glass-card product-card">
+                        <div class="wishlist">❤</div>
+                        <div class="product-img-container">
+                            <img src="img/laptop.jpg" alt="Laptop ASUS" />
+                            <span class="badge color-blue product-tag">Best Seller</span>
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-title">Laptop ASUS Vivobook</h4>
+                            <div class="product-meta-row">
+                                <div class="product-price">Rp 9.500.000</div>
+                                <span class="rating">⭐ 4.8</span>
+                            </div>
+                            <a href="/Geser/" class="button button-fill button-small add-to-cart-btn">
+                                <i class="f7-icons">plus</i> Keranjang
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card glass-card product-card">
+                        <div class="wishlist gray">♡</div>
+                        <div class="product-img-container">
+                            <img src="img/kemeja.jpg" alt="Kemeja Flanel" />
+                            <span class="badge color-red product-tag">Diskon 20%</span>
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-title">Kemeja Flanel Pria</h4>
+                            <div class="product-meta-row">
+                                <div class="product-price">Rp 499.000</div>
+                                <span class="rating">⭐ 4.6</span>
+                            </div>
+                            <a href="/Padel/" class="button button-fill button-small add-to-cart-btn">
+                                <i class="f7-icons">plus</i> Keranjang
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card glass-card product-card">
+                        <div class="wishlist">❤</div>
+                        <div class="product-img-container">
+                            <img src="img/jam.jpg" alt="Smartwatch" />
+                            <span class="badge color-green product-tag">Terbaru</span>
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-title">Smartwatch Premium</h4>
+                            <div class="product-meta-row">
+                                <div class="product-price">Rp 1.150.000</div>
+                                <span class="rating">⭐ 4.9</span>
+                            </div>
+                            <a href="/Bola/" class="button button-fill button-small add-to-cart-btn">
+                                <i class="f7-icons">plus</i> Keranjang
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card glass-card product-card">
+                        <div class="wishlist gray">♡</div>
+                        <div class="product-img-container">
+                            <img src="img/hoodie.jpg" alt="Jaket Hoodie" />
+                            <span class="badge color-orange product-tag">Stok Tipis</span>
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-title">Jaket Hoodie</h4>
+                            <div class="product-meta-row">
+                                <div class="product-price">Rp 799.000</div>
+                                <span class="rating">⭐ 4.7</span>
+                            </div>
+                            <a href="/Bulutangkis/" class="button button-fill button-small add-to-cart-btn">
+                                <i class="f7-icons">plus</i> Keranjang
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="card glass-card product-card">
+                        <div class="wishlist gray">♡</div>
+                        <div class="product-img-container">
+                            <img src="img/iphone17.jpg" alt="Jaket Hoodie" />
+                            <span class="badge color-green product-tag">Best Seller</span>
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-title">Iphone 17Pro</h4>
+                            <div class="product-meta-row">
+                                <div class="product-price">Rp 2.499.000</div>
+                                <span class="rating">⭐ 4.7</span>
+                            </div>
+                            <a href="/Fore/" class="button button-fill button-small add-to-cart-btn">
+                                <i class="f7-icons">plus</i> Keranjang
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card glass-card product-card">
+                        <div class="wishlist gray">♡</div>
+                        <div class="product-img-container">
+                            <img src="img/samba.jpg" alt="Jaket Hoodie" />
+                            <span class="badge color-Blue product-tag">Stok Terbatas</span>
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-title">Sepatu Adidas Samba</h4>
+                            <div class="product-meta-row">
+                                <div class="product-price">Rp 2.999.000</div>
+                                <span class="rating">⭐ 4.7</span>
+                            </div>
+                            <a href="/Adidas/" class="button button-fill button-small add-to-cart-btn">
+                                <i class="f7-icons">plus</i> Keranjang
+                            </a>
+                        </div>
+                    </div>
+
+                     <div class="card glass-card product-card">
+                        <div class="wishlist gray">♡</div>
+                        <div class="product-img-container">
+                            <img src="img/zx400.jpg" alt="Jaket Hoodie" />
+                            <span class="badge color-orange product-tag">Terbaru</span>
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-title">Motor ZX400</h4>
+                            <div class="product-meta-row">
+                                <div class="product-price">Rp 350.999.000</div>
+                                <span class="rating">⭐ 4.7</span>
+                            </div>
+                            <a href="/Tomorrow/" class="button button-fill button-small add-to-cart-btn">
+                                <i class="f7-icons">plus</i> Keranjang
+                            </a>
+                        </div>
+                    </div>
+
+                     <div class="card glass-card product-card">
+                        <div class="wishlist gray">♡</div>
+                        <div class="product-img-container">
+                            <img src="img/innova.jpg" alt="Jaket Hoodie" />
+                            <span class="badge color-orange product-tag">Terbaru</span>
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-title">Mobil Innova Reborn</h4>
+                            <div class="product-meta-row">
+                                <div class="product-price">Rp 700.499.000</div>
+                                <span class="rating">⭐ 4.7</span>
+                            </div>
+                            <a href="/Window/" class="button button-fill button-small add-to-cart-btn">
+                                <i class="f7-icons">plus</i> Keranjang
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="toolbar toolbar-bottom tabbar custom-toolbar">
+            <div class="toolbar-inner">
+                <a href="/About/" class="tab-link" data-menu="Home">
+                    <i class="icon f7-icons if-not-md">house_fill</i>
+                    <i class="icon material-icons if-md">home</i>
+                    <span class="tabbar-label">Home</span>
+                </a>
+                <a href="#" class="tab-link current-menu" data-menu="Cari">
+                    <i class="icon f7-icons if-not-md">search</i>
+                    <i class="icon material-icons if-md">search</i>
+                    <span class="tabbar-label">Cari</span>
+                </a>
+                <a href="/Dialog/" class="tab-link" data-menu="Keranjang">
+                    <i class="icon f7-icons if-not-md">cart</i>
+                    <i class="icon material-icons if-md">shopping_cart</i>
+                    <span class="tabbar-label">Keranjang</span>
+                </a>
+                <a href="/Jendela/" class="tab-link" data-menu="Profil">
+                    <i class="icon f7-icons if-not-md">person</i>
+                    <i class="icon material-icons if-md">person</i>
+                    <span class="tabbar-label">Profil</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</template>
+
+<style>
+    /* Base Configuration */
+    .dashboard-page {
+        font-family: -apple-system, SF Pro Text, Roboto, sans-serif;
+    }
+
+    /* Navbar Styling Alignment */
+    .dashboard-page .navbar .navbar-bg {
+        background-color: #111827;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .dashboard-page .navbar .title {
+        color: #ffffff;
+        font-weight: 800;
+        letter-spacing: 0.8px;
+    }
+
+    .dashboard-page .navbar .f7-icons {
+        color: white;
+    }
+
+    /* Cyberpunk Dark Background Engine */
+    .dashboard-bg {
+        background-color: #0b0f19;
+        background-image:
+            radial-gradient(circle at top right, rgba(32, 93, 247, 0.2), transparent 40%),
+            radial-gradient(circle at bottom left, rgba(0, 229, 255, 0.15), transparent 45%);
+        background-attachment: fixed;
+    }
+
+    .dashboard-wrapper {
+        padding: 16px;
+        padding-bottom: 90px;
+        /* Cegah konten terbawah tertutup oleh bottom toolbar */
+    }
+
+    /* Core Glassmorphic Card Formula */
+    .glass-card {
+        background: rgba(255, 255, 255, 0.03) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        border-radius: 20px !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+        margin: 0 0 16px 0 !important;
+        overflow: hidden;
+    }
+
+    /* Section Titles */
+    .section-title {
+        color: #ffffff !important;
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.5px;
+        margin: 20px 4px 12px 4px !important;
+    }
+
+    .no-margin-top {
+        margin-top: 0 !important;
+    }
+
+    /* Swiper Setup */
+    #mySwiper {
+        height: 180px;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .swiper-slide {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .slide-overlay {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 24px;
+        box-sizing: border-box;
+        background: linear-gradient(to top, rgba(11, 15, 25, 0.85), rgba(0, 0, 0, 0.2));
+        text-align: left;
+    }
+
+    .slide-overlay h2 {
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: 800;
+        margin: 0 0 6px 0;
+    }
+
+    .slide-overlay p {
+        color: #00e5ff;
+        font-size: 12px;
+        margin: 0;
+    }
+
+    .slide-blue {
+        background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=500&auto=format&fit=crop');
+    }
+
+    .slide-green {
+        background-image: url('https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=500&auto=format&fit=crop');
+    }
+
+    .slide-red {
+        background-image: url('/img/online-shopping.jpg');
+    }
+
+    /* Search & Filter Component Modification */
+    .custom-search {
+        background: transparent !important;
+        padding: 0 !important;
+    }
+
+    .custom-search input[type="search"] {
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 12px !important;
+        color: #ffffff !important;
+    }
+
+    .custom-search .searchbar-icon {
+        color: #94a3b8;
+    }
+
+    /* Horisontal Category Chips */
+    .category-scroll {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        margin-top: 14px;
+        padding-bottom: 2px;
+    }
+
+    .category-scroll::-webkit-scrollbar {
+        display: none;
+    }
+
+    .category-scroll .chip {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: #94a3b8;
+        border-radius: 10px;
+        padding: 6px 14px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .category-scroll .chip-active {
+        background: linear-gradient(135deg, #00e5ff, #205DF7) !important;
+        color: #ffffff !important;
+        border: none;
+        box-shadow: 0 4px 12px rgba(0, 229, 255, 0.2);
+    }
+
+    /* Filters Select Section */
+    .filter-row {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+
+    .filter-row select {
+        flex: 1;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.04);
+        color: #cbd5e1;
+        border-radius: 12px;
+        padding: 8px 10px;
+        font-size: 11px;
+        font-weight: 500;
+        outline: none;
+    }
+
+    /* Structural Product Grid Layout (Consistent 2-columns) */
+    .product-grid-layout {
+        --f7-grid-gap: 12px;
+    }
+
+    .product-card {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    /* Wishlist Icon Overlay */
+    .wishlist {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 3;
+        background: rgba(11, 15, 25, 0.6);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 13px;
+        color: #ff3b30;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .wishlist.gray {
+        color: #94a3b8;
+    }
+
+    /* Product Image Framework */
+    .product-img-container {
+        position: relative;
+        width: 100%;
+        height: 120px;
+        background: rgba(255, 255, 255, 0.02);
+        overflow: hidden;
+    }
+
+    .product-img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .product-tag {
+        position: absolute;
+        bottom: 8px;
+        left: 8px;
+        font-size: 9px;
+        font-weight: 700;
+        padding: 3px 8px;
+        border-radius: 6px;
+        z-index: 2;
+    }
+
+    /* Product Info Data Content */
+    .product-info {
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .product-title {
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 600;
+        margin: 0 0 6px 0;
+        line-height: 1.3;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        min-height: 34px;
+    }
+
+    .product-meta-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+
+    .product-price {
+        color: #00e5ff;
+        font-weight: 700;
+        font-size: 13px;
+    }
+
+    .rating {
+        font-size: 11px;
+        color: #f59e0b;
+    }
+
+    /* Add to Cart Grid Trigger Button */
+    .add-to-cart-btn {
+        background: linear-gradient(90deg, #205DF7, #00e5ff) !important;
+        color: #ffffff !important;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 11px;
+        text-transform: none;
+        height: 32px;
+        border: none;
+        box-shadow: 0 4px 12px rgba(32, 93, 247, 0.2);
+    }
+
+    /* Shared Toolbar Standard Styles */
+    .custom-toolbar {
+        background: #111827 !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.4);
+        height: 65px;
+    }
+
+    .custom-toolbar .tab-link {
+        color: #94a3b8;
+        transition: color 0.2s ease;
+        padding-top: 6px;
+    }
+
+    .custom-toolbar .tab-link .icon {
+        font-size: 22px;
+    }
+
+    .custom-toolbar .tabbar-label {
+        font-size: 10px;
+        font-weight: 500;
+        margin-top: 2px;
+    }
+
+    .custom-toolbar .tab-link.current-menu {
+        color: #00e5ff !important;
+    }
+</style>
+
+<script>
+    export default (props, { $f7, $onMounted, $ }) => {
+
+        $onMounted(() => {
+            // 1. ENGINE TOGGLE THEME MANAGEMENT
+            $('#dark-mode-checkbox').on('change', function () {
+                const isDarkMode = $(this).is(':checked');
+                if (isDarkMode) {
+                    $f7.setDarkMode(true);
+                } else {
+                    $f7.setDarkMode(false);
+                }
+            });
+
+            // 2. INITIALIZE SWIPER CONTEXT SHOWCASE
+            const swiper = $f7.swiper.create('#mySwiper', {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                effect: 'fade',
+                loop: true,
+                autoplay: {
+                    delay: 3500,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+
+            // 3. SEARCH RUNTIME FILTER LOGIC
+            $('.custom-search input').on('input', function () {
+                const value = $(this).val().toLowerCase();
+                $('.product-grid-layout .product-card').each(function () {
+                    const productName = $(this).find('.product-title').text().toLowerCase();
+                    if (productName.indexOf(value) > -1) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+
+            // 4. CHIP CATEGORY INTERACTION TRIGGER
+            $('.category-scroll .chip').on('click', function () {
+                $('.category-scroll .chip').removeClass('chip-active');
+                $(this).addClass('chip-active');
+
+                $f7.toast.create({
+                    text: `Filter kategori: ${$(this).text()}`,
+                    closeTimeout: 1500,
+                    position: 'center'
+                }).open();
+            });
+
+            // 5. DROPDOWN SELECTION ALERT
+            $('.filter-row select').on('change', function () {
+                const selectedOpt = $(this).find('option:selected').text();
+                $f7.dialog.alert(`Mengurutkan data berdasarkan: <b>${selectedOpt}</b>`, 'Filter Aktif');
+            });
+
+            // 6. TOGGLE WISHLIST ACTION
+            $('.product-grid-layout').on('click', '.wishlist', function (e) {
+                e.stopPropagation();
+                const productName = $(this).siblings('.product-info').find('.product-title').text();
+
+                if ($(this).hasClass('gray')) {
+                    $(this).removeClass('gray').text('❤');
+                    $f7.toast.create({ text: `❤️ ${productName} disimpan!`, closeTimeout: 1500, position: 'center' }).open();
+                } else {
+                    $(this).addClass('gray').text('♡');
+                    $f7.toast.create({ text: `💔 ${productName} dihapus.`, closeTimeout: 1500, position: 'center' }).open();
+                }
+            });
+
+            // 7. ADD TO CART SUBMIT SYSTEM
+            $('.product-grid-layout').on('click', '.add-to-cart-btn', function (e) {
+                e.preventDefault();
+                const productName = $(this).siblings('.product-title').text();
+
+                $f7.toast.create({
+                    text: `🛒 ${productName} masuk keranjang!`,
+                    closeTimeout: 2000,
+                    position: 'bottom',
+                    destroyOnClose: true
+                }).open();
+            });
+
+        });
+
+        return $render;
+    };
+</script>

@@ -1,0 +1,521 @@
+<template>
+    <div class="page dashboard-page" data-name="utama">
+
+        <div class="navbar navbar-center">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner sliding">
+                <div class="left">
+                    <a href="/" class="link icon-only back">
+                        <i class="f7-icons">rectangle_signout_fill</i>
+                    </a>
+                </div>
+                <div class="title">VirtualShop</div>
+                <div class="right">
+                    <a href="/Dialog/" class="link icon-only">
+                        <i class="f7-icons">cart_fill</i>
+                        <span class="badge color-red">3</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-content dashboard-bg">
+            <div class="dashboard-wrapper">
+
+                <div class="card glass-card profile-card">
+                    <div class="card-content card-content-padding user-flex-wrapper">
+                        <img src="/img/mupid.jpg" class="user-avatar" alt="Mufid" />
+                        <div class="user-welcome-text">
+                            <h2>Halo, Mufid Rofi' Ali!</h2>
+                            <p><span class="badge color-blue">Premium Member</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card glass-card quick-wallet-card">
+                    <div class="card-content card-content-padding">
+                        <div class="wallet-item">
+                            <i class="f7-icons color-blue-icon">money_dollar_circle_fill</i>
+                            <div>
+                                <span class="wallet-val">Rp 100.000.000</span>
+                                <span class="wallet-lbl">Saldo Anda</span>
+                            </div>
+                        </div>
+                        <div class="wallet-divider"></div>
+                        <div class="wallet-item">
+                            <i class="f7-icons color-orange-icon">star_circle_fill</i>
+                            <div>
+                                <span class="wallet-val">1.250 Poin</span>
+                                <span class="wallet-lbl">Reward E-Wallet</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block-title section-title">Kategori Utama</div>
+                <div class="grid grid-cols-4 grid-gap category-grid">
+                    <a href="/kategori/elektronik" class="category-item">
+                        <div class="icon-box blue-gradient"><i class="f7-icons">device_phone_portrait</i></div>
+                        <span>Gadget</span>
+                    </a>
+                    <a href="/kategori/fashion" class="category-item">
+                        <div class="icon-box orange-gradient"><i class="f7-icons">bag_fill</i></div>
+                        <span>Fashion</span>
+                    </a>
+                    <a href="/Dialog/" class="category-item">
+                        <div class="icon-box green-gradient"><i class="f7-icons">cart_fill</i></div>
+                        <span>Groceries</span>
+                    </a>
+                    <a href="/Tiket/" class="category-item">
+                        <div class="icon-box red-gradient"><i class="f7-icons">ticket_fill</i></div>
+                        <span>Voucher</span>
+                    </a>
+                </div>
+
+                <div class="block-title section-title">Promo Spesial Untukmu</div>
+                <div class="card glass-card promo-banner-card">
+                    <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=600&auto=format&fit=crop"
+                        class="promo-img" alt="Promo Flash Sale" />
+                    <div class="promo-overlay">
+                        <span class="badge color-red animate-pulse">Kupon 5x Tersedia</span>
+                        <h3>Mega Flash Sale Ramadan</h3>
+                        <p>Diskon hingga 70% + Gratis Ongkir Terbatas!</p>
+                    </div>
+                </div>
+
+                <div class="block-title section-title">Rekomendasi Produk Pilihan</div>
+                <div class="grid grid-cols-2 grid-gap product-grid">
+
+                    <div class="card glass-card product-card">
+                        <div class="product-img-container">
+                            <img src="/img/laptop.jpg" alt="Headphone Premium" />
+                            <span class="badge color-orange product-tag">Hot</span>
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-title">Laptop Asus Vivobook</h4>
+                            <div class="product-price">Rp 9.500.000</div>
+                            <button class="button button-fill button-small add-to-cart-btn">
+                                <i class="f7-icons">plus</i> Keranjang
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card glass-card product-card">
+                        <div class="product-img-container">
+                            <img src="/img/jam.jpg" alt="Smartwatch Minimalist" />
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-title">Smartwatch Premium</h4>
+                            <div class="product-price">Rp 1.150.000</div>
+                            <button class="button button-fill button-small add-to-cart-btn">
+                                <i class="f7-icons">plus</i> Keranjang
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="block no-margin-horizontal dynamic-actions">
+                    <div class="row">
+                        <div class="col-50">
+                            <a href="/Dialog/" class="button button-fill action-btn btn-secondary">Lihat Keranjang</a>
+                        </div>
+                        <div class="col-50">
+                            <a href="/Slide/" class="button button-fill action-btn">Lihat Produk Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card glass-card footer-card">
+                    <div class="card-content card-content-padding text-center">
+                        <div class="dev-footer-content">
+                            <img src="/img/mupid.jpg" class="dev-avatar-dash" alt="Mufid" />
+                            <div class="dev-info-dash">
+                                <h4>Mufid Rofi' Ali</h4>
+                                <p>Full Stack Developer • UNAS</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="toolbar toolbar-bottom tabbar custom-toolbar">
+            <div class="toolbar-inner">
+                <a href="/About/" class="tab-link current-menu" data-menu="Home">
+                    <i class="icon f7-icons if-not-md">house_fill</i>
+                    <i class="icon material-icons if-md">home</i>
+                    <span class="tabbar-label">Home</span>
+                </a>
+                <a href="/Slide/" class="tab-link" data-menu="Cari">
+                    <i class="icon f7-icons if-not-md">search</i>
+                    <i class="icon material-icons if-md">search</i>
+                    <span class="tabbar-label">Cari</span>
+                </a>
+                <a href="/Dialog/" class="tab-link ">
+                    <i class="icon f7-icons if-not-md">cart</i>
+                    <i class="icon material-icons if-md">shopping_cart</i>
+                    <span class="tabbar-label">Keranjang</span>
+                </a>
+
+                <a href="/Jendela/" class="tab-link menu-profil">
+                    <i class="icon f7-icons if-not-md">person</i>
+                    <i class="icon material-icons if-md">person</i>
+                    <span class="tabbar-label">Profil</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</template>
+
+<style>
+    /* Base Configuration */
+    .dashboard-page {
+        font-family: -apple-system, SF Pro Text, Roboto, sans-serif;
+    }
+
+    /* Navbar Centering & Styling */
+    .navbar-center .title {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+    .dashboard-page .navbar .navbar-bg {
+        background-color: #111827;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .dashboard-page .navbar .title {
+        color: #ffffff;
+        font-weight: 800;
+        letter-spacing: 0.8px;
+    }
+
+    .dashboard-page .navbar .f7-icons {
+        color: white;
+    }
+
+    /* Background Engine */
+    .dashboard-bg {
+        background-color: #0b0f19;
+        background-image: radial-gradient(circle at top right, rgba(32, 93, 247, 0.2), transparent 40%),
+            radial-gradient(circle at bottom left, rgba(239, 68, 68, 0.15), transparent 40%);
+        background-attachment: fixed;
+    }
+
+    .dashboard-wrapper {
+        padding: 16px;
+        padding-bottom: 36px;
+    }
+
+    /* Core Glassmorphism Recipe */
+    .glass-card {
+        background: rgba(255, 255, 255, 0.05) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 20px !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+        overflow: hidden;
+        margin: 0 0 16px 0 !important;
+    }
+
+    /* User Profil Row Layout */
+    .profile-card {
+        border-left: 4px solid #205DF7 !important;
+    }
+
+    .user-flex-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .user-avatar {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        object-fit: cover;
+    }
+
+    .user-welcome-text h2 {
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 700;
+        margin: 0 0 4px 0;
+    }
+
+    /* Quick Integrated Wallet Widget */
+    .quick-wallet-card .card-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 16px;
+    }
+
+    .wallet-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .wallet-item .f7-icons {
+        font-size: 28px;
+    }
+
+    .wallet-val {
+        display: block;
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: 700;
+    }
+
+    .wallet-lbl {
+        display: block;
+        color: #94a3b8;
+        font-size: 11px;
+    }
+
+    .wallet-divider {
+        width: 1px;
+        height: 30px;
+        background: rgba(255, 255, 255, 0.15);
+    }
+
+    /* Section Titles */
+    .section-title {
+        color: #ffffff !important;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+        margin: 20px 0 12px 4px !important;
+        text-transform: uppercase;
+        opacity: 0.9;
+    }
+
+    /* Modern Icon Category Grid */
+    .category-grid {
+        margin-bottom: 20px;
+    }
+
+    .category-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    .category-item span {
+        color: #e2e8f0;
+        font-size: 12px;
+        font-weight: 500;
+        margin-top: 8px;
+    }
+
+    .icon-box {
+        width: 52px;
+        height: 52px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .icon-box .f7-icons {
+        font-size: 22px;
+        color: #ffffff;
+    }
+
+    /* Gradients for category */
+    .blue-gradient {
+        background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    }
+
+    .orange-gradient {
+        background: linear-gradient(135deg, #f59e0b, #b45309);
+    }
+
+    .green-gradient {
+        background: linear-gradient(135deg, #10b981, #047857);
+    }
+
+    .red-gradient {
+        background: linear-gradient(135deg, #ef4444, #b91c1c);
+    }
+
+    /* Interactive Banner Promo Styling */
+    .promo-banner-card {
+        position: relative;
+        height: 150px;
+    }
+
+    .promo-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.45);
+    }
+
+    .promo-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    .promo-overlay h3 {
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 700;
+        margin: 8px 0 2px 0;
+    }
+
+    .promo-overlay p {
+        color: #cbd5e1;
+        font-size: 12px;
+        margin: 0;
+    }
+
+    /* Product Grid & Card Architecture */
+    .product-grid {
+        margin-bottom: 20px;
+    }
+
+    .product-card {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    }
+
+    .product-img-container {
+        position: relative;
+        width: 100%;
+        height: 130px;
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    .product-img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .product-tag {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+    }
+
+    .product-info {
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .product-title {
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 600;
+        margin: 0 0 6px 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        height: 36px;
+        line-height: 1.4;
+    }
+
+    .product-price {
+        color: #60a5fa;
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .add-to-cart-btn {
+        background: rgba(32, 93, 247, 0.8) !important;
+        border-radius: 8px;
+        font-weight: 600;
+        text-transform: none;
+    }
+
+    /* Utility & Functional Buttons */
+    .dynamic-actions {
+        margin: 24px 0;
+    }
+
+    .action-btn {
+        background: #205DF7 !important;
+        color: white !important;
+        height: 44px;
+        border-radius: 12px;
+        font-weight: 600;
+        text-transform: none;
+        box-shadow: 0 4px 14px rgba(32, 93, 247, 0.25);
+    }
+
+    .btn-secondary {
+        background: rgba(255, 255, 255, 0.1) !important;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    /* Footer Section Styling */
+    .footer-card {
+        margin-top: 24px !important;
+    }
+
+    .dev-footer-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dev-avatar-dash {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 2px solid #205DF7;
+        margin-right: 12px;
+        object-fit: cover;
+    }
+
+    .dev-info-dash {
+        text-align: left;
+    }
+
+    .dev-info-dash h4 {
+        margin: 0;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .dev-info-dash p {
+        margin: 2px 0 0 0;
+        color: #60a5fa;
+        font-size: 11px;
+        font-weight: bold;
+    }
+</style>
+
+<script>
+    export default (props, { $f7, $on }) => {
+        $on('pageInit', () => {
+            // Logic binding or data fetching can be attached here
+        });
+
+        return $render;
+    };
+</script>

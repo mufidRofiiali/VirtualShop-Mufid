@@ -1,0 +1,384 @@
+<template>
+    <div class="page vouchers-page" data-name="voucher">
+
+        <div class="navbar navbar-center">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner sliding">
+                <div class="left">
+                    <a href="#" class="link icon-only back">
+                        <i class="f7-icons">arrow_left</i>
+                    </a>
+                </div>
+                <div class="title">Voucher Saya</div>
+                <div class="right">
+                    <a href="#" class="link icon-only tool-btn">
+                        <i class="f7-icons">info_circle_fill</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="toolbar tabbar toolbar-top glass-tabbar">
+            <div class="toolbar-inner">
+                <a href="#tab-active" class="tab-link tab-link-active">Tersedia (5)</a>
+                <a href="#tab-used" class="tab-link">Riwayat</a>
+            </div>
+        </div>
+
+        <div class="page-content dashboard-bg with-subnavbar">
+            <div class="tabs dashboard-wrapper">
+
+                <div id="tab-active" class="tab tab-active">
+
+                    <div class="card glass-card promo-input-card">
+                        <div class="card-content card-content-padding">
+                            <div class="promo-input-flex">
+                                <input type="text" placeholder="Masukkan kode promo..." class="glass-input" />
+                                <button class="button button-fill action-btn claim-btn">Klaim</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block-title section-title">Voucher Diskon & Ongkir</div>
+
+                    <div class="voucher-ticket glass-voucher border-green">
+                        <div class="voucher-left green-gradient">
+                            <i class="f7-icons">truck_fill</i>
+                            <span>ONGKIR</span>
+                        </div>
+                        <div class="voucher-right">
+                            <div class="voucher-info">
+                                <span class="badge color-green product-tag">Terbatas</span>
+                                <h4>Gratis Ongkir s.d Rp20.000</h4>
+                                <p>Min. Belanja Rp50.000 • Semua Toko</p>
+                            </div>
+                            <div class="voucher-footer">
+                                <span class="expiry-text"><i class="f7-icons">time_fill</i> Sisa 2 hari lagi</span>
+                                <a href="/Slide/"
+                                    class="button button-small button-outline use-voucher-btn border-green-text">Pakai</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="voucher-ticket glass-voucher border-blue">
+                        <div class="voucher-left blue-gradient">
+                            <i class="f7-icons">percent</i>
+                            <span>DISKON</span>
+                        </div>
+                        <div class="voucher-right">
+                            <div class="voucher-info">
+                                <span class="badge color-blue product-tag">Premium</span>
+                                <h4>Diskon 15% Spesial Ramadan</h4>
+                                <p>Maks. Potongan Rp100.000 • Kategori Gadget</p>
+                            </div>
+                            <div class="voucher-footer">
+                                <span class="expiry-text"><i class="f7-icons">time_fill</i> s.d 30 Mar 2026</span>
+                                <a href="/Slide/"
+                                    class="button button-small button-outline use-voucher-btn border-blue-text">Pakai</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="voucher-ticket glass-voucher border-orange">
+                        <div class="voucher-left orange-gradient">
+                            <i class="f7-icons">star_circle_fill</i>
+                            <span>POIN</span>
+                        </div>
+                        <div class="voucher-right">
+                            <div class="voucher-info">
+                                <span class="badge color-orange product-tag">E-Wallet</span>
+                                <h4>Cashback 500 Poin Rewards</h4>
+                                <p>Tanpa Min. Belanja • Pembayaran Virtual Wallet</p>
+                            </div>
+                            <div class="voucher-footer">
+                                <span class="expiry-text"><i class="f7-icons">time_fill</i> s.d 05 Apr 2026</span>
+                                <a href="/Slide/"
+                                    class="button button-small button-outline use-voucher-btn border-orange-text">Pakai</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="voucher-ticket glass-voucher border-red">
+                        <div class="voucher-left red-gradient">
+                            <i class="f7-icons">ticket_fill</i>
+                            <span>POTONGAN</span>
+                        </div>
+                        <div class="voucher-right">
+                            <div class="voucher-info">
+                                <span class="badge color-red product-tag">Flash Sale</span>
+                                <h4>Potongan Langsung Rp50.000</h4>
+                                <p>Min. Belanja Rp300.000 • Produk Pilihan</p>
+                            </div>
+                            <div class="voucher-footer">
+                                <span class="expiry-text"><i class="f7-icons">time_fill</i> Sisa 5 jam lagi</span>
+                                <a href="/Slide/"
+                                    class="button button-small button-outline use-voucher-btn border-red-text">Pakai</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="tab-used" class="tab">
+                    <div class="block-title section-title">Telah Digunakan / Kedaluwarsa</div>
+
+                    <div class="voucher-ticket glass-voucher voucher-disabled">
+                        <div class="voucher-left gray-gradient">
+                            <i class="f7-icons">checkmark_seal_fill</i>
+                            <span>USED</span>
+                        </div>
+                        <div class="voucher-right">
+                            <div class="voucher-info">
+                                <h4>Diskon Belanja Rp10.000</h4>
+                                <p>Telah digunakan pada transaksi #TRX9021</p>
+                            </div>
+                            <div class="voucher-footer">
+                                <span class="expiry-text">14 Juni 2026</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="voucher-ticket glass-voucher voucher-disabled">
+                        <div class="voucher-left gray-gradient">
+                            <i class="f7-icons">xmark_shield_fill</i>
+                            <span>EXPIRED</span>
+                        </div>
+                        <div class="voucher-right">
+                            <div class="voucher-info">
+                                <h4>Gratis Ongkir Toko Elektronik</h4>
+                                <p>Masa berlaku voucher telah habis</p>
+                            </div>
+                            <div class="voucher-footer">
+                                <span class="expiry-text">Expired 01 Juni 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</template>
+
+<style>
+    /* Sinkronisasi Jarak Subnavbar F7 */
+    .with-subnavbar {
+        padding-top: 48px !important;
+    }
+
+    /* Tabbar Customization (Glassmorphism) */
+    .glass-tabbar {
+        background: rgba(17, 24, 39, 0.8) !important;
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(15px) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+        top: var(--f7-navbar-height);
+    }
+
+    .glass-tabbar .tab-link {
+        color: #94a3b8 !important;
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .glass-tabbar .tab-link-active {
+        color: #60a5fa !important;
+        border-bottom: 3px solid #205DF7;
+    }
+
+    /* Claim Promo Code Input Section */
+    .promo-input-card {
+        margin: 4px 0 16px 0 !important;
+    }
+
+    .promo-input-flex {
+        display: flex;
+        gap: 10px;
+    }
+
+    .glass-input {
+        flex-grow: 1;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 0 14px;
+        color: white;
+        font-size: 14px;
+        height: 40px;
+    }
+
+    .glass-input:focus {
+        border-color: #205DF7;
+        outline: none;
+    }
+
+    .claim-btn {
+        height: 40px !important;
+        padding: 0 20px;
+        border-radius: 10px;
+        margin: 0 !important;
+    }
+
+    /* Core Ticket UI Architecture */
+    .voucher-ticket {
+        display: flex;
+        height: 110px;
+        border-radius: 14px;
+        overflow: hidden;
+        margin-bottom: 14px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        position: relative;
+    }
+
+    .glass-voucher {
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Border Aksen Sisi Kiri Tiket */
+    .border-green {
+        border-left: 4px solid #10b981;
+    }
+
+    .border-blue {
+        border-left: 4px solid #3b82f6;
+    }
+
+    .border-orange {
+        border-left: 4px solid #f59e0b;
+    }
+
+    .border-red {
+        border-left: 4px solid #ef4444;
+    }
+
+    /* Sisi Kiri Tiket (Bagian Ikon) */
+    .voucher-left {
+        width: 85px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        color: white;
+        position: relative;
+    }
+
+    /* Efek Gerigi Tiket (Sisi Pemisah) */
+    .voucher-left::after {
+        content: '';
+        position: absolute;
+        right: -5px;
+        top: 0;
+        bottom: 0;
+        width: 10px;
+        background-image: radial-gradient(circle, transparent 4px, rgba(255, 255, 255, 0.02) 4px);
+        background-size: 10px 14px;
+    }
+
+    .voucher-left .f7-icons {
+        font-size: 26px;
+    }
+
+    .voucher-left span {
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+    }
+
+    /* Sisi Kanan Tiket (Bagian Informasi) */
+    .voucher-right {
+        flex-grow: 1;
+        padding: 12px 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .voucher-info h4 {
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 700;
+        margin: 4px 0 2px 0;
+    }
+
+    .voucher-info p {
+        color: #94a3b8;
+        font-size: 11px;
+        margin: 0;
+    }
+
+    .voucher-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .expiry-text {
+        color: #cbd5e1;
+        font-size: 11px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .expiry-text .f7-icons {
+        font-size: 12px;
+        color: #ef4444;
+    }
+
+    /* Tombol Pakai Model Outline */
+    .use-voucher-btn {
+        border-radius: 6px;
+        font-weight: 700;
+        text-transform: none;
+        height: 26px;
+        line-height: 24px;
+        padding: 0 14px;
+    }
+
+    .border-green-text {
+        border-color: #10b981 !important;
+        color: #10b981 !important;
+    }
+
+    .border-blue-text {
+        border-color: #3b82f6 !important;
+        color: #3b82f6 !important;
+    }
+
+    .border-orange-text {
+        border-color: #f59e0b !important;
+        color: #f59e0b !important;
+    }
+
+    .border-red-text {
+        border-color: #ef4444 !important;
+        color: #ef4444 !important;
+    }
+
+    /* Keadaan Voucher Mati (Used/Expired) */
+    .voucher-disabled {
+        opacity: 0.4;
+        border-left: 4px solid #64748b;
+    }
+
+    .gray-gradient {
+        background: linear-gradient(135deg, #64748b, #334155);
+    }
+</style>
+
+<script>
+    export default (props, { $f7, $on }) => {
+        $on('pageInit', () => {
+            // Tempat menambahkan logika fungsional tab / penukaran kode voucher
+        });
+
+        return $render;
+    };
+</script>

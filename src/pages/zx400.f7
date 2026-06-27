@@ -1,0 +1,248 @@
+<template>
+    <div class="page dashboard-page" data-name="shop-page">
+
+        <div class="navbar navbar-center">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner sliding">
+                <div class="left">
+                    <a href="#" class="link back">
+                        <i class="icon icon-back"></i>
+                    </a>
+                </div>
+                <div class="title">Toko Online & Keranjang</div>
+            </div>
+        </div>
+
+        <div class="page-content">
+
+            <div class="block-title">Etalase Produk</div>
+            <div class="block">
+                <div class="product-grid"
+                    style="display: grid; grid-template-cols: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px;">
+
+                    <div class="product-card"
+                        style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 12px; position: relative; background: #fff;">
+                        <div class="wishlist"
+                            style="position: absolute; top: 10px; right: 10px; color: #ff3b30; cursor: pointer;">I</div>
+                        <div class="img-container" style="text-align: center; position: relative;">
+                            <img src="img/zx400.jpg"
+                                style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;" />
+                            <span class="image-tag tag-elektronik"
+                                style="position: absolute; bottom: 5px; left: 5px; background: #ff9500; color: #fff; padding: 2px 6px; font-size: 10px; border-radius: 4px;">Best
+                                Seller</span>
+                        </div>
+                        <div class="product-name" style="font-weight: bold; font-size: 14px; margin-top: 8px;">Zx 400rr</div>
+                        <div class="product-bottom"
+                            style="display: flex; justify-content: space-between; align-items: center; margin-vertical: 8px;">
+                            <div class="product-price" style="color: #ff9500; font-weight: bold; font-size: 13px;">Rp
+                                350.999.000</div>
+                            <span class="rating" style="font-size: 12px; color: #777;">⭐ 4.8</span>
+                        </div>
+
+                        <button @click="${addToCart}" class="button button-fill button-small add-to-cart-btn color-blue"
+                            style="width: 100%;">
+                            <i class="icon f7-icons size-14">plus</i> Chekout
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="block-title" style="margin-top: 30px;">Daftar Produk Di Keranjang</div>
+
+            ${cartItems.length === 0 ? $h`
+            <div class="block text-align-center margin-top-xl">
+                <i class="icon f7-icons size-50 color-gray">cart</i>
+                <p style="color: #888; font-size: 16px;">Keranjang belanja kamu kosong.</p>
+            </div>
+            ` : $h`
+            <div class="list media-list no-chevron no-hairlines margin-vertical">
+                <ul>
+                    ${cartItems.map((item) => $h`
+                    <li class="item-content item-input">
+                        <div class="item-media">
+                            <img src="${item.image}" width="80"
+                                style="border-radius: 8px; object-fit: cover; height: 80px;" />
+                        </div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title font-weight-bold" style="font-size: 14px;">${item.name}</div>
+                                <div class="item-after">
+                                    <a href="#" @click="${() => deleteItem(item.id)}" class="link color-red">
+                                        <i class="icon f7-icons size-20">trash_fill</i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item-subtitle color-orange font-weight-bold"
+                                style="font-size: 13px; margin-top: 4px;">
+                                Rp ${(item.price).toLocaleString('id-ID')}
+                            </div>
+
+                            <div class="margin-top-xs"
+                                style="display: flex; align-items: center; justify-content: space-between;">
+                                <div class="stepper stepper-init stepper-small stepper-raised">
+                                    <button class="button" @click="${() => changeQuantity(item.id, -1)}">-</button>
+                                    <div class="stepper-value">${item.quantity}</div>
+                                    <button class="button" @click="${() => changeQuantity(item.id, 1)}">+</button>
+                                </div>
+                                <div class="font-weight-semibold" style="font-size: 13px; color: #333;">
+                                    Subtotal: Rp ${(item.price * item.quantity).toLocaleString('id-ID')}
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    `)}
+                </ul>
+            </div>
+
+            <div class="block block-strong inset margin-top" style="background: #f9f9f9; border-radius: 12px;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                    <span style="color: #666;">Total Item:</span>
+                    <span class="font-weight-semibold">${totalItems()} Produk</span>
+                </div>
+                <div
+                    style="display: flex; justify-content: space-between; margin-bottom: 15px; border-top: 1px dashed #ccc; padding-top: 10px;">
+                    <span style="font-size: 16px; font-weight: bold;">Total Harga:</span>
+                    <span style="font-size: 16px; font-weight: bold; color: #1e3c72;">
+                        Rp ${totalPrice().toLocaleString('id-ID')}
+                    </span>
+                </div>
+
+                <div class="grid grid-cols-2 grid-gap">
+                    <button class="button button-outline color-red" @click="${clearCart}">
+                        Kosongkan
+                    </button>
+                    <button class="button button-fill color-green" @click="${handleCheckout}">
+                        Checkout Sekarang
+                    </button>
+                </div>
+            </div>
+            `}
+        </div>
+    </div>
+</template>
+
+<style>
+    .dashboard-page {
+        font-family: -apple-system, SF Pro Text, Roboto, sans-serif;
+    }
+</style>
+
+<script>
+    export default (props, { $f7, $update, $h }) => {
+
+        // Keranjang diinisialisasi kosong / atau bisa diisi default data
+        let cartItems = [];
+
+        // Fungsi untuk memasukkan produk Laptop ke dalam array keranjang secara reaktif
+        const addToCart = () => {
+            const productId = 1; // ID Unik untuk Laptop Asus
+
+            // Cek apakah produk tersebut sudah ada di keranjang atau belum
+            const existingItem = cartItems.find(item => item.id === productId);
+
+            if (existingItem) {
+                // Jika sudah ada, cukup tambahkan kuantitasnya saja
+                existingItem.quantity += 1;
+            } else {
+                // Jika belum ada, lakukan push object data baru ke dalam array
+                cartItems.push({
+                    id: productId,
+                    name: 'Zx 400rr',
+                    price: 350999000,
+                    quantity: 1,
+                    image: 'img/zx400.jpg'
+                });
+            }
+
+            // Memperbarui UI secara instan setelah data berubah
+            $update();
+
+            // Memunculkan Toast pemberitahuan sukses
+            $f7.toast.create({
+                text: 'Zx 400rr!',
+                closeTimeout: 1500,
+                position: 'bottom',
+                cssClass: 'bg-color-blue'
+            }).open();
+        };
+
+        // Fungsi Hitung Total Item
+        const totalItems = () => {
+            return cartItems.reduce((sum, item) => sum + item.quantity, 0);
+        };
+
+        // Fungsi Hitung Total Harga
+        const totalPrice = () => {
+            return cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        };
+
+        // Mengubah Kuantitas (+ / -)
+        const changeQuantity = (id, delta) => {
+            const item = cartItems.find(i => i.id === id);
+            if (item) {
+                item.quantity += delta;
+                if (item.quantity < 1) item.quantity = 1;
+                $update();
+            }
+        };
+
+        // Menghapus Item Tunggal
+        const deleteItem = (id) => {
+            const item = cartItems.find(i => i.id === id);
+            if (!item) return;
+
+            $f7.dialog.confirm(
+                `Apakah Anda yakin ingin menghapus <b>${item.name}</b> dari keranjang?`,
+                'Hapus Produk',
+                () => {
+                    cartItems = cartItems.filter(i => i.id !== id);
+                    $update();
+                    $f7.toast.create({
+                        text: 'Produk berhasil dihapus',
+                        closeTimeout: 1500,
+                        position: 'center'
+                    }).open();
+                }
+            );
+        };
+
+        // Mengosongkan Seluruh Keranjang
+        const clearCart = () => {
+            $f7.dialog.confirm(
+                'Kosongkan seluruh isi keranjang belanja?',
+                'Konfirmasi',
+                () => {
+                    cartItems = [];
+                    $update();
+                }
+            );
+        };
+
+        // Proses Checkout menggunakan Preloader bawaan Framework7
+        const handleCheckout = () => {
+            $f7.dialog.preloader('Memproses pesanan Anda...');
+
+            // Simulasi loading server selama 2 detik
+            setTimeout(() => {
+                $f7.dialog.close(); // Menutup preloader loading
+
+                // Menampilkan dialog sukses checkout
+                $f7.dialog.alert(
+                    'Pesanan Anda berhasil diproses! Terima kasih telah berbelanja di TokoShop.',
+                    'Checkout Sukses',
+                    () => {
+                        // Setelah klik OK, bersihkan keranjang belanja
+                        cartItems = [];
+                        $update();
+
+                        // Arahkan user kembali ke halaman utama aplikasi Anda
+                        $f7.views.main.router.navigate('/slide/');
+                    }
+                );
+            }, 2000);
+        };
+
+        return $render;
+    };
+</script>

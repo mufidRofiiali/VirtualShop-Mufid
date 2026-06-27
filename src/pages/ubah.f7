@@ -1,0 +1,282 @@
+<template>
+    <div class="page edit-address-page" data-name="edit-alamat">
+
+        <!-- Navbar -->
+        <div class="navbar navbar-center">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner sliding">
+                <div class="left">
+                    <a href="#" class="link icon-only back">
+                        <i class="f7-icons">arrow_left</i>
+                    </a>
+                </div>
+                <div class="title">Ubah Alamat</div>
+                <div class="right">
+                    <!-- Tombol Hapus Cepat di Pojok Kanan Atas -->
+                    <a href="#" @click="${konfirmasiHapus}" class="link icon-only color-red-text">
+                        <i class="f7-icons">trash_fill</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Content -->
+        <div class="page-content dashboard-bg">
+            <div class="dashboard-wrapper">
+
+                <!-- Form Input Alamat -->
+                <div class="block-title section-title">Detail Alamat Pengiriman</div>
+                <form id="edit-address-form" class="list no-hairlines glass-form-list">
+                    <ul>
+                        <!-- Nama Penerima -->
+                        <li class="item-content item-input">
+                            <div class="item-media">
+                                <div class="form-icon-box"><i class="f7-icons">person_fill</i></div>
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title item-label">Nama Penerima</div>
+                                <div class="item-input-wrap">
+                                    <input type="text" name="nama_penerima" placeholder="Nama lengkap penerima"
+                                        value="Mufid Rofi' Ali" class="glass-field" required validate />
+                                    <span class="input-clear-button"></span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- Nomor Telepon -->
+                        <li class="item-content item-input">
+                            <div class="item-media">
+                                <div class="form-icon-box"><i class="f7-icons">phone_fill</i></div>
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title item-label">Nomor Telepon</div>
+                                <div class="item-input-wrap">
+                                    <input type="tel" name="telepon_penerima" placeholder="Contoh: 0812345678"
+                                        value="+62 812-9876-5432" class="glass-field" required validate
+                                        pattern="[0-9+ \-]*" />
+                                    <span class="input-clear-button"></span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- Label Alamat -->
+                        <li class="item-content item-input">
+                            <div class="item-media">
+                                <div class="form-icon-box"><i class="f7-icons">tag_fill</i></div>
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title item-label">Label Alamat</div>
+                                <div class="item-input-wrap">
+                                    <input type="text" name="label_alamat" placeholder="Contoh: Rumah, Kantor, Kos"
+                                        value="Kantor / Kos" class="glass-field" required validate />
+                                    <span class="input-clear-button"></span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- Detail Alamat (Textarea) -->
+                        <li class="item-content item-input align-items-start">
+                            <div class="item-media margin-top-xs">
+                                <div class="form-icon-box"><i class="f7-icons">placemark_fill</i></div>
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title item-label">Alamat Lengkap</div>
+                                <div class="item-input-wrap">
+                                    <textarea name="alamat_lengkap"
+                                        placeholder="Nama jalan, gedung, nomor rumah, RT/RW, Kecamatan, Kota"
+                                        class="glass-field glass-textarea" required
+                                        validate>Jl. RM. Harsono No.1, Ragunan, Kec. Pasar Minggu, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12550</textarea>
+                                    <span class="input-clear-button"></span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- Catatan Kurir -->
+                        <li class="item-content item-input">
+                            <div class="item-media">
+                                <div class="form-icon-box"><i class="f7-icons">info_circle_fill</i></div>
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title item-label">Catatan untuk Kurir (Opsional)</div>
+                                <div class="item-input-wrap">
+                                    <input type="text" name="catatan_kurir"
+                                        placeholder="Contoh: Pagar hitam, titip ke sekuriti"
+                                        value="Titip di pos sekuriti depan gerbang utama." class="glass-field" />
+                                    <span class="input-clear-button"></span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </form>
+
+                <!-- Tombol Aksi Bersusun -->
+                <div class="block address-action-block">
+                    <button @click="${perbaruiAlamat}"
+                        class="button button-fill action-btn btn-save-gradient margin-bottom">
+                        <i class="f7-icons margin-right-xs">floppy_disk_fill</i> Simpan Perubahan
+                    </button>
+
+                    <button @click="${konfirmasiHapus}" class="button button-fill action-btn btn-outline-danger">
+                        <i class="f7-icons margin-right-xs">trash_fill</i> Hapus Alamat Ini
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</template>
+
+<style>
+    /* Mengikuti standar CSS Glassmorphic dari halaman sebelumnya */
+    .glass-form-list {
+        margin: 0 0 24px 0 !important;
+        background: transparent !important;
+    }
+
+    .glass-form-list ul {
+        background: rgba(255, 255, 255, 0.04) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        border-radius: 16px !important;
+        overflow: hidden;
+        padding: 6px 0;
+    }
+
+    .form-icon-box {
+        width: 30px;
+        color: #60a5fa;
+        display: flex;
+        align-items: center;
+    }
+
+    .form-icon-box .f7-icons {
+        font-size: 18px;
+    }
+
+    .glass-form-list .item-label {
+        color: #94a3b8 !important;
+        font-size: 11px;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        margin-bottom: 2px;
+    }
+
+    .glass-field {
+        color: #ffffff !important;
+        font-size: 14px !important;
+        height: 38px !important;
+        background: transparent !important;
+    }
+
+    /* Penyesuaian khusus elemen textarea */
+    .glass-textarea {
+        height: 80px !important;
+        padding-top: 8px !important;
+        resize: none;
+    }
+
+    .glass-form-list .item-input-wrap::after {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .glass-form-list .item-input-focused .item-input-wrap::after {
+        background-color: #205DF7 !important;
+    }
+
+    .glass-form-list .input-clear-button {
+        color: #94a3b8;
+    }
+
+    /* Pengaturan Tombol Aksi */
+    .address-action-block {
+        margin: 24px 0;
+    }
+
+    .btn-save-gradient {
+        background: linear-gradient(135deg, #205DF7, #1d4ed8) !important;
+        box-shadow: 0 4px 14px rgba(32, 93, 247, 0.3) !important;
+    }
+
+    /* Tombol Hapus Berbentuk Outline Merah Transparan */
+    .btn-outline-danger {
+        background: rgba(239, 68, 68, 0.05) !important;
+        color: #ef4444 !important;
+        border: 1px solid rgba(239, 68, 68, 0.4) !important;
+        box-shadow: none !important;
+    }
+
+    .btn-outline-danger:active {
+        background: rgba(239, 68, 68, 0.15) !important;
+    }
+
+    .color-red-text {
+        color: #ef4444 !important;
+    }
+
+    .align-items-start {
+        align-items: flex-start !important;
+    }
+
+    .margin-top-xs {
+        margin-top: 8px;
+    }
+
+    .margin-right-xs {
+        margin-right: 6px;
+    }
+</style>
+
+<script>
+    export default (props, { $f7, $on }) => {
+
+        // 1. FUNGSI UPDATE / PERBARUI ALAMAT
+        const perbaruiAlamat = () => {
+            const formElement = document.getElementById('edit-address-form');
+            const isValid = formElement.checkValidity();
+
+            if (!isValid) {
+                $f7.dialog.alert('Harap lengkapi isian alamat dengan benar.', 'Formulir Belum Lengkap');
+                return;
+            }
+
+            const dataAlamat = $f7.form.convertToData('#edit-address-form');
+
+            $f7.dialog.preloader('Memperbarui alamat...');
+
+            // Simulasi AJAX update ke server (1.2 detik)
+            setTimeout(() => {
+                $f7.dialog.close();
+                $f7.dialog.alert('Alamat pengiriman berhasil diperbarui!', 'Sukses', () => {
+                    $f7.views.main.router.back(); // Kembali ke daftar alamat
+                });
+                console.log('Alamat Diperbarui:', dataAlamat);
+            }, 1200);
+        };
+
+        // 2. FUNGSI HAPUS ALAMAT (DENGAN KONFIRMASI)
+        const konfirmasiHapus = () => {
+            $f7.dialog.confirm(
+                'Apakah Anda yakin ingin menghapus alamat pengiriman ini secara permanen?',
+                'Hapus Alamat',
+                () => {
+                    // Blok ini dijalankan jika pengguna menekan tombol "OK" / "Ya"
+                    $f7.dialog.preloader('Menghapus alamat...');
+
+                    // Simulasi AJAX hapus ke server (1 detik)
+                    setTimeout(() => {
+                        $f7.dialog.close();
+                        $f7.dialog.alert('Alamat telah berhasil dihapus.', 'Terhapus', () => {
+                            $f7.views.main.router.back(); // Kembali ke daftar alamat
+                        });
+                        console.log('Alamat dengan ID terkait telah dihapus.');
+                    }, 1000);
+                }
+            );
+        };
+
+        return $render;
+    };
+</script>

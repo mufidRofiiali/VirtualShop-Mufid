@@ -1,0 +1,390 @@
+<template>
+    <div class="page profile-page" data-name="satu">
+
+        <!-- Navbar -->
+        <div class="navbar navbar-center">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner sliding">
+                <div class="left">
+                    <a href="#" class="link icon-only back">
+                        <i class="f7-icons">arrow_left</i>
+                    </a>
+                </div>
+                <div class="title">Profil Saya</div>
+                <div class="right">
+                    <a href="#" class="link icon-only">
+                        <i class="f7-icons">gear_alt_fill</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Content -->
+        <div class="page-content dashboard-bg">
+            <div class="dashboard-wrapper">
+
+                <!-- Main Profile Card -->
+                <div class="card glass-card main-profile-card">
+                    <div class="card-content card-content-padding text-center">
+                        <div class="avatar-edit-wrapper">
+                            <img src="/img/mupid.jpg" class="profile-avatar-large" alt="Mufid" />
+                            <span class="badge color-blue edit-avatar-badge"><i class="f7-icons">camera_fill</i></span>
+                        </div>
+                        <h2 class="profile-name">Mufid Rofi' Ali</h2>
+                        <p class="profile-email">mufidrofiali5@gmail.com</p>
+                        <div class="profile-badges">
+                            <span class="badge color-blue">Premium Member</span>
+                            <span class="badge color-green">Verified Account</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shopping Summary Info (Mini Grid) -->
+                <div class="grid grid-cols-3 grid-gap summary-grid">
+                    <div class="card glass-card summary-item-card">
+                        <div class="card-content text-center">
+                            <span class="summary-val">12</span>
+                            <span class="summary-lbl">Transaksi</span>
+                        </div>
+                    </div>
+                    <div class="card glass-card summary-item-card">
+                        <div class="card-content text-center">
+                            <span class="summary-val">5</span>
+                            <span class="summary-lbl">Ulasan</span>
+                        </div>
+                    </div>
+                    <div class="card glass-card summary-item-card">
+                        <div class="card-content text-center">
+                            <span class="summary-val">24</span>
+                            <span class="summary-lbl">Wishlist</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu List Section: Aktivitas Saya -->
+                <div class="block-title section-title">Aktivitas Saya</div>
+                <div class="list no-hairlines no-hairlines-between glass-list">
+                    <ul>
+                        <li>
+                            <a href="/Dialog/" class="item-link item-content">
+                                <div class="item-media">
+                                    <div class="list-icon-box blue-icon"><i class="f7-icons">bag_fill</i></div>
+                                </div>
+                                <div class="item-inner">
+                                    <div class="item-title">Riwayat Pembelian</div>
+                                    <div class="item-after"><span class="badge color-red">2 Proses</span></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Tiket/" class="item-link item-content">
+                                <div class="item-media">
+                                    <div class="list-icon-box red-icon"><i class="f7-icons">ticket_fill</i></div>
+                                </div>
+                                <div class="item-inner">
+                                    <div class="item-title">Voucher Saya</div>
+                                    <div class="item-after">5 Tersedia</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Alamat/" class="item-link item-content">
+                                <div class="item-media">
+                                    <div class="list-icon-box green-icon"><i class="f7-icons">placemark_fill</i></div>
+                                </div>
+                                <div class="item-inner">
+                                    <div class="item-title">Daftar Alamat</div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Menu List Section: Keamanan & Privasi -->
+                <div class="block-title section-title">Keamanan & Bantuan</div>
+                <div class="list no-hairlines no-hairlines-between glass-list">
+                    <ul>
+                        <li>
+                            <a href="/Ubah/" class="item-link item-content">
+                                <div class="item-media">
+                                    <div class="list-icon-box orange-icon"><i
+                                            class="f7-icons">person_crop_circle_fill</i></div>
+                                </div>
+                                <div class="item-inner">
+                                    <div class="item-title">Edit Profil Akun</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/keamanan/" class="item-link item-content">
+                                <div class="item-media">
+                                    <div class="list-icon-box purple-icon"><i class="f7-icons">lock_fill</i></div>
+                                </div>
+                                <div class="item-inner">
+                                    <div class="item-title">Kata Sandi & Keamanan</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/hubungi-kami/" class="item-link item-content">
+                                <div class="item-media">
+                                    <div class="list-icon-box teal-icon"><i class="f7-icons">chat_bubble_2_fill</i>
+                                    </div>
+                                </div>
+                                <div class="item-inner">
+                                    <div class="item-title">Customer Service VirtualShop</div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Logout Button -->
+                <div class="block logout-block">
+                    <a href="/" class="button button-fill action-btn btn-danger back">
+                        <i class="f7-icons margin-right-xs">rectangle_signout_fill</i> Keluar dari Akun
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="toolbar toolbar-bottom tabbar custom-toolbar">
+            <div class="toolbar-inner">
+                <a href="/About/" class="tab-link current-menu" data-menu="Home">
+                    <i class="icon f7-icons if-not-md">house_fill</i>
+                    <i class="icon material-icons if-md">home</i>
+                    <span class="tabbar-label">Home</span>
+                </a>
+                <a href="/Slide/" class="tab-link" data-menu="Cari">
+                    <i class="icon f7-icons if-not-md">search</i>
+                    <i class="icon material-icons if-md">search</i>
+                    <span class="tabbar-label">Cari</span>
+                </a>
+                <a href="/Dialog/" class="tab-link ">
+                    <i class="icon f7-icons if-not-md">cart</i>
+                    <i class="icon material-icons if-md">shopping_cart</i>
+                    <span class="tabbar-label">Keranjang</span>
+                </a>
+
+                <a href="/Jendela/" class="tab-link menu-profil">
+                    <i class="icon f7-icons if-not-md">person</i>
+                    <i class="icon material-icons if-md">person</i>
+                    <span class="tabbar-label">Profil</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</template>
+
+<style>
+    /* Tambahan & Sinkronisasi CSS Gaya Glassmorphism */
+
+    .main-profile-card {
+        padding: 10px 0;
+        border-top: 4px solid #205DF7 !important;
+    }
+
+    .avatar-edit-wrapper {
+        position: relative;
+        width: 90px;
+        height: 90px;
+        margin: 0 auto 12px auto;
+    }
+
+    .profile-avatar-large {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 3px solid rgba(255, 255, 255, 0.2);
+        object-fit: cover;
+    }
+
+    .edit-avatar-badge {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: 2px solid #0b0f19;
+    }
+
+    .edit-avatar-badge .f7-icons {
+        font-size: 12px;
+    }
+
+    .profile-name {
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: 800;
+        margin: 0 0 2px 0;
+    }
+
+    .profile-email {
+        color: #94a3b8;
+        font-size: 13px;
+        margin: 0 0 12px 0;
+    }
+
+    .profile-badges {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+    }
+
+    /* Summary Mini Cards */
+    .summary-grid {
+        margin-bottom: 16px;
+    }
+
+    .summary-item-card {
+        margin: 0 !important;
+    }
+
+    .summary-item-card .card-content {
+        padding: 12px 8px;
+    }
+
+    .summary-val {
+        display: block;
+        color: #60a5fa;
+        font-size: 16px;
+        font-weight: 800;
+    }
+
+    .summary-lbl {
+        display: block;
+        color: #94a3b8;
+        font-size: 10px;
+        margin-top: 2px;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    /* Framework7 List Glassmorphism Customization */
+    .glass-list {
+        margin: 0 0 20px 0 !important;
+        background: transparent !important;
+    }
+
+    .glass-list ul {
+        background: rgba(255, 255, 255, 0.04) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        border-radius: 16px !important;
+        overflow: hidden;
+        padding: 4px 0;
+    }
+
+    .glass-list .item-content {
+        color: #ffffff;
+        transition: background 0.2s;
+    }
+
+    .glass-list .item-content:active {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .glass-list .item-title {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .glass-list .item-after {
+        color: #94a3b8;
+        font-size: 13px;
+    }
+
+    /* List Icons Box Styling */
+    .list-icon-box {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .list-icon-box .f7-icons {
+        font-size: 18px;
+        color: #ffffff;
+    }
+
+    /* Icon box unique background colors */
+    .blue-icon {
+        background: rgba(59, 130, 246, 0.2);
+        color: #3b82f6;
+    }
+
+    .red-icon {
+        background: rgba(239, 68, 68, 0.2);
+        color: #ef4444;
+    }
+
+    .green-icon {
+        background: rgba(16, 185, 129, 0.2);
+        color: #10b981;
+    }
+
+    .orange-icon {
+        background: rgba(245, 158, 11, 0.2);
+        color: #f59e0b;
+    }
+
+    .purple-icon {
+        background: rgba(139, 92, 246, 0.2);
+        color: #8b5cf6;
+    }
+
+    .teal-icon {
+        background: rgba(20, 184, 166, 0.2);
+        color: #14b8a6;
+    }
+
+    /* Danger / Logout Button overrides */
+    .logout-block {
+        margin: 32px 0 16px 0;
+    }
+
+    .btn-danger {
+        background: linear-gradient(135deg, #ef4444, #b91c1c) !important;
+        box-shadow: 0 4px 14px rgba(239, 68, 68, 0.3) !important;
+        border: none !important;
+    }
+
+    .margin-right-xs {
+        margin-right: 6px;
+    }
+
+    /* Warna dasar default untuk menu profil (Biru) */
+    .custom-toolbar .tab-link.menu-profil {
+        color: #2196f3 !important;
+        /* Warna Biru */
+    }
+
+    /* Warna menu profil saat AKTIF / DIKLIK */
+    .custom-toolbar .tab-link.menu-profil.current-menu {
+        color: #00e5ff !important;
+        /* Berubah menjadi Biru Terang/Cyan (Silakan ganti sesuai selera) */
+        transform: scale(1.05);
+        /* Efek sedikit membesar saat aktif */
+        transition: all 0.3s ease;
+    }
+</style>
+
+<script>
+    export default (props, { $f7, $on }) => {
+        $on('pageInit', () => {
+            // Logika profil seperti check session atau update data di sini
+        });
+
+        return $render;
+    };
+</script>

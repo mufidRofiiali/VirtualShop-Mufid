@@ -1,0 +1,283 @@
+<template>
+    <div class="page" data-name="about">
+
+        <div class="navbar navbar-center">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner sliding">
+                <div class="left">
+                    <a href="#" class="link back">
+                        <i class="icon icon-back"></i>
+                    </a>
+                </div>
+                <div class="title">Keranjang Belanja</div>
+            </div>
+        </div>
+
+        <div class="page-content">
+            <div class="block-title">Daftar Produk Di Keranjang</div>
+
+            ${cartItems.length === 0 ? $h`
+            <div class="block text-align-center margin-top-xl">
+                <i class="icon f7-icons size-50 color-gray">cart</i>
+                <p style="color: #888; font-size: 16px;">Keranjang belanja kamu kosong.</p>
+                <a href="#" class="button button-fill button-round back inline-block margin-top">Mulai Belanja</a>
+            </div>
+            ` : $h`
+            <div class="list media-list no-chevron no-hairlines margin-vertical">
+                <ul>
+                    ${cartItems.map((item) => $h`
+                    <li class="item-content item-input">
+                        <div class="item-media">
+                            <img src="${item.image}" width="80"
+                                style="border-radius: 8px; object-fit: cover; height: 80px;" />
+                        </div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title font-weight-bold" style="font-size: 14px;">${item.name}</div>
+                                <div class="item-after">
+                                    <a href="#" @click="${() => deleteItem(item.id)}" class="link color-red">
+                                        <i class="icon f7-icons size-20">trash_fill</i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item-subtitle color-orange font-weight-bold"
+                                style="font-size: 13px; margin-top: 4px;">
+                                Rp ${(item.price).toLocaleString('id-ID')}
+                            </div>
+
+                            <div class="margin-top-xs"
+                                style="display: flex; align-items: center; justify-content: space-between;">
+                                <div class="stepper stepper-init stepper-small stepper-raised">
+                                    <button class="button" @click="${() => changeQuantity(item.id, -1)}">-</button>
+                                    <div class="stepper-value">${item.quantity}</div>
+                                    <button class="button" @click="${() => changeQuantity(item.id, 1)}">+</button>
+                                </div>
+                                <div class="font-weight-semibold" style="font-size: 13px; color: #333;">
+                                    Subtotal: Rp ${(item.price * item.quantity).toLocaleString('id-ID')}
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    `)}
+                </ul>
+            </div>
+
+            <div class="block block-strong inset margin-top" style="background: #f9f9f9; border-radius: 12px;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                    <span style="color: #666;">Total Item:</span>
+                    <span class="font-weight-semibold">${totalItems()} Produk</span>
+                </div>
+                <div
+                    style="display: flex; justify-content: space-between; margin-bottom: 15px; border-top: 1px dashed #ccc; padding-top: 10px;">
+                    <span style="font-size: 16px; font-weight: bold;">Total Harga:</span>
+                    <span style="font-size: 16px; font-weight: bold; color: #1e3c72;">
+                        Rp ${totalPrice().toLocaleString('id-ID')}
+                    </span>
+                </div>
+
+                <div class="grid grid-cols-2 grid-gap">
+                    <button class="button button-outline color-red" @click="${clearCart}">
+                        Kosongkan
+                    </button>
+                    <button class="button button-fill color-green" @click="${handleCheckout}">
+                        Checkout Sekarang
+                    </button>
+                </div>
+            </div>
+            `}
+        </div>
+
+        <div class="toolbar toolbar-bottom tabbar custom-toolbar">
+            <div class="toolbar-inner">
+                <a href="/About/" class="tab-link current-menu" data-menu="Home">
+                    <i class="icon f7-icons if-not-md">house_fill</i>
+                    <i class="icon material-icons if-md">home</i>
+                    <span class="tabbar-label">Home</span>
+                </a>
+                <a href="/Slide/" class="tab-link" data-menu="Cari">
+                    <i class="icon f7-icons if-not-md">search</i>
+                    <i class="icon material-icons if-md">search</i>
+                    <span class="tabbar-label">Cari</span>
+                </a>
+                <a href="/Dialog/" class="tab-link menu-keranjang" data-menu="Keranjang">
+                    <i class="icon f7-icons if-not-md">cart</i>
+                    <i class="icon material-icons if-md">shopping_cart</i>
+                    <span class="tabbar-label">Keranjang</span>
+                </a>
+
+                <a href="/Jendela/" class="tab-link">
+                    <i class="icon f7-icons if-not-md">person</i>
+                    <i class="icon material-icons if-md">person</i>
+                    <span class="tabbar-label">Profil</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style>
+    /* Warna dasar default untuk menu Keranjang (Biru) */
+    .custom-toolbar .tab-link.menu-keranjang {
+        color: #2196f3 !important;
+        /* Warna Biru */
+    }
+
+    /* Warna menu Keranjang saat AKTIF / DIKLIK */
+    .custom-toolbar .tab-link.menu-keranjang.current-menu {
+        color: #00e5ff !important;
+        /* Berubah menjadi Biru Terang/Cyan (Silakan ganti sesuai selera) */
+        transform: scale(1.05);
+        /* Efek sedikit membesar saat aktif */
+        transition: all 0.3s ease;
+    }
+</style>
+
+<script>
+    export default (props, { $f7, $update, $h }) => {
+
+        // 1. Data Dummy State Keranjang Belanja
+        let cartItems = [
+            {
+                id: 1,
+                name: 'Laptop ASUS Vivobook 14"',
+                price: 9500000,
+                quantity: 1,
+                image: 'img/laptop.jpg'
+            },
+            {
+                id: 2,
+                name: 'Kemeja Flanel Pria Premium',
+                price: 499000, // Misal Rp 1.890.000 / disesuaikan
+                quantity: 2,
+                image: 'img/kemeja.jpg'
+            },
+            {
+                id: 3,
+                name: 'Smartwatch Premium Series X',
+                price: 1150000,
+                quantity: 1,
+                image: 'img/jam.jpg'
+            },
+            {
+                id: 4,
+                name: 'Jaket Hoodie',
+                price: 799000,
+                quantity: 1,
+                image: 'img/hoodie.jpg'
+            },
+            {
+                id: 5,
+                name: 'Sepatu Adidas Samba',
+                price: 2999000,
+                quantity: 1,
+                image: 'img/samba.jpg'
+            },
+            {
+                id: 6,
+                name: 'Iphone 17Pro',
+                price: 24999000,
+                quantity: 1,
+                image: 'img/iphone17.jpg'
+            },
+            {
+                id: 7,
+                name: 'Innova Reborn',
+                price: 700499000,
+                quantity: 1,
+                image: 'img/innova.jpg'
+            },
+            {
+                id: 8,
+                name: 'Zx 400rr',
+                price: 350999000,
+                quantity: 1,
+                image: 'img/zx400.jpg'
+            },
+        ];
+
+        // 2. Fungsi Hitung Total Item & Total Harga secara reaktif
+        const totalItems = () => {
+            return cartItems.reduce((sum, item) => sum + item.quantity, 0);
+        };
+
+        const totalPrice = () => {
+            return cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        };
+
+        // 3. Fungsi Tambah / Kurang Kuantitas Produk
+        const changeQuantity = (id, delta) => {
+            const item = cartItems.find(i => i.id === id);
+            if (item) {
+                item.quantity += delta;
+                // Mencegah kuantitas turun di bawah 1
+                if (item.quantity < 1) item.quantity = 1;
+                $update();
+            }
+        };
+
+        // 4. Fungsi Hapus Single Item dengan Dialog Confirm Framework7
+        const deleteItem = (id) => {
+            const item = cartItems.find(i => i.id === id);
+            if (!item) return;
+
+            $f7.dialog.confirm(
+                `Apakah Anda yakin ingin menghapus <b>${item.name}</b> dari keranjang?`,
+                'Hapus Produk',
+                () => {
+                    // Callback jika menekan OK
+                    cartItems = cartItems.filter(i => i.id !== id);
+                    $update();
+
+                    // Toast sukses dihapus
+                    $f7.toast.create({
+                        text: 'Produk berhasil dihapus',
+                        closeTimeout: 1500,
+                        position: 'center'
+                    }).open();
+                }
+            );
+        };
+
+        // 5. Fungsi Kosongkan Seluruh Keranjang
+        const clearCart = () => {
+            $f7.dialog.confirm(
+                'Kosongkan seluruh isi keranjang belanja?',
+                'Konfirmasi',
+                () => {
+                    cartItems = [];
+                    $update();
+                    $f7.toast.create({
+                        text: 'Keranjang telah dikosongkan',
+                        closeTimeout: 1500,
+                        position: 'center'
+                    }).open();
+                }
+            );
+        };
+
+        // 6. Fungsi Simulasi Checkout dengan Preloader
+        const handleCheckout = () => {
+            $f7.dialog.preloader('Memproses pesanan Anda...');
+
+            // Simulasi loading selama 2 detik
+            setTimeout(() => {
+                $f7.dialog.close(); // Tutup preloader
+
+                // Tampilkan dialog berhasil
+                $f7.dialog.alert(
+                    'Pesanan Anda berhasil diproses! Terima kasih telah berbelanja di TokoShop.',
+                    'Checkout Sukses',
+                    () => {
+                        // Kosongkan keranjang setelah checkout sukses
+                        cartItems = [];
+                        $update();
+                        // Arahkan kembali ke halaman slide atau beranda
+                        $f7.views.main.router.navigate('/slide/');
+                    }
+                );
+            }, 2000);
+        };
+
+        return $render;
+    };
+</script>

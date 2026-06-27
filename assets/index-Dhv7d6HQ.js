@@ -306,7 +306,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
 
     </div>
   </div>
-`}}Md.id=`0ecd387dfe`,Md.style=`
+`}}Md.id=`d95f6f643f`,Md.style=`
   /* Base Configuration & Fonts */
   .login-page {
     font-family: -apple-system, SF Pro Text, Roboto, sans-serif;
@@ -582,7 +582,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
 
                 <div class="card glass-card profile-card">
                     <div class="card-content card-content-padding user-flex-wrapper">
-                        <img src="/img/mupid.jpg" class="user-avatar" alt="Mufid" />
+                        <img src="img/mupid.jpg" class="user-avatar" alt="Mufid" />
                         <div class="user-welcome-text">
                             <h2>Halo, Mufid Rofi' Ali!</h2>
                             <p><span class="badge color-blue">Premium Member</span></p>
@@ -646,7 +646,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
 
                     <div class="card glass-card product-card">
                         <div class="product-img-container">
-                            <img src="/img/laptop.jpg" alt="Headphone Premium" />
+                            <img src="img/laptop.jpg" alt="Headphone Premium" />
                             <span class="badge color-orange product-tag">Hot</span>
                         </div>
                         <div class="product-info">
@@ -660,7 +660,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
 
                     <div class="card glass-card product-card">
                         <div class="product-img-container">
-                            <img src="/img/jam.jpg" alt="Smartwatch Minimalist" />
+                            <img src="img/jam.jpg" alt="Smartwatch Minimalist" />
                         </div>
                         <div class="product-info">
                             <h4 class="product-title">Smartwatch Premium</h4>
@@ -687,7 +687,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
                 <div class="card glass-card footer-card">
                     <div class="card-content card-content-padding text-center">
                         <div class="dev-footer-content">
-                            <img src="/img/mupid.jpg" class="dev-avatar-dash" alt="Mufid" />
+                            <img src="img/mupid.jpg" class="dev-avatar-dash" alt="Mufid" />
                             <div class="dev-info-dash">
                                 <h4>Mufid Rofi' Ali</h4>
                                 <p>Full Stack Developer • UNAS</p>
@@ -726,7 +726,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
         </div>
 
     </div>
-`}}Nd.id=`514846f10c`,Nd.style=`
+`}}Nd.id=`e79ca5d2f0`,Nd.style=`
     /* Base Configuration */
     .dashboard-page {
         font-family: -apple-system, SF Pro Text, Roboto, sans-serif;
@@ -1304,7 +1304,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
     </div>
   </div>
 </div>
-`}}Pd.id=`a7eae36634`;function Fd(e,{$f7:t,$update:n,$h:r}){let i=[{id:1,name:`Laptop ASUS Vivobook 14"`,price:95e5,quantity:1,image:`img/laptop.jpg`},{id:2,name:`Kemeja Flanel Pria Premium`,price:499e3,quantity:2,image:`img/kemeja.jpg`},{id:3,name:`Smartwatch Premium Series X`,price:115e4,quantity:1,image:`img/jam.jpg`},{id:4,name:`Jaket Hoodie`,price:799e3,quantity:1,image:`img/hoodie.jpg`},{id:5,name:`Sepatu Adidas Samba`,price:2999e3,quantity:1,image:`img/samba.jpg`},{id:6,name:`Iphone 17Pro`,price:24999e3,quantity:1,image:`img/iphone17.jpg`},{id:7,name:`Innova Reborn`,price:700499e3,quantity:1,image:`img/innova.jpg`},{id:8,name:`Zx 400rr`,price:350999e3,quantity:1,image:`img/zx400.jpg`}],a=()=>i.reduce((e,t)=>e+t.quantity,0),o=()=>i.reduce((e,t)=>e+t.price*t.quantity,0),s=(e,t)=>{let r=i.find(t=>t.id===e);r&&(r.quantity+=t,r.quantity<1&&(r.quantity=1),n())},c=e=>{let r=i.find(t=>t.id===e);r&&t.dialog.confirm(`Apakah Anda yakin ingin menghapus <b>${r.name}</b> dari keranjang?`,`Hapus Produk`,()=>{i=i.filter(t=>t.id!==e),n(),t.toast.create({text:`Produk berhasil dihapus`,closeTimeout:1500,position:`center`}).open()})},l=()=>{t.dialog.confirm(`Kosongkan seluruh isi keranjang belanja?`,`Konfirmasi`,()=>{i=[],n(),t.toast.create({text:`Keranjang telah dikosongkan`,closeTimeout:1500,position:`center`}).open()})},u=()=>{t.dialog.preloader(`Memproses pesanan Anda...`),setTimeout(()=>{t.dialog.close(),t.dialog.alert(`Pesanan Anda berhasil diproses! Terima kasih telah berbelanja di TokoShop.`,`Checkout Sukses`,()=>{i=[],n(),t.views.main.router.navigate(`/slide/`)})},2e3)};return function(e){e.$;var t=e.$h;return e.$root,e.$f7,e.$f7route,e.$f7router,e.$theme,e.$update,e.$store,t`
+`}}Pd.id=`17a6440178`;function Fd(e,{$f7:t,$update:n,$h:r}){let i=[{id:1,name:`Laptop ASUS Vivobook 14"`,price:95e5,quantity:1,image:`img/laptop.jpg`},{id:2,name:`Kemeja Flanel Pria Premium`,price:499e3,quantity:2,image:`img/kemeja.jpg`},{id:3,name:`Smartwatch Premium Series X`,price:115e4,quantity:1,image:`img/jam.jpg`},{id:4,name:`Jaket Hoodie`,price:799e3,quantity:1,image:`img/hoodie.jpg`},{id:5,name:`Sepatu Adidas Samba`,price:2999e3,quantity:1,image:`img/samba.jpg`},{id:6,name:`Iphone 17Pro`,price:24999e3,quantity:1,image:`img/iphone17.jpg`},{id:7,name:`Innova Reborn`,price:700499e3,quantity:1,image:`img/innova.jpg`},{id:8,name:`Zx 400rr`,price:350999e3,quantity:1,image:`img/zx400.jpg`}],a=()=>i.reduce((e,t)=>e+t.quantity,0),o=()=>i.reduce((e,t)=>e+t.price*t.quantity,0),s=(e,t)=>{let r=i.find(t=>t.id===e);r&&(r.quantity+=t,r.quantity<1&&(r.quantity=1),n())},c=e=>{let r=i.find(t=>t.id===e);r&&t.dialog.confirm(`Apakah Anda yakin ingin menghapus <b>${r.name}</b> dari keranjang?`,`Hapus Produk`,()=>{i=i.filter(t=>t.id!==e),n(),t.toast.create({text:`Produk berhasil dihapus`,closeTimeout:1500,position:`center`}).open()})},l=()=>{t.dialog.confirm(`Kosongkan seluruh isi keranjang belanja?`,`Konfirmasi`,()=>{i=[],n(),t.toast.create({text:`Keranjang telah dikosongkan`,closeTimeout:1500,position:`center`}).open()})},u=()=>{t.dialog.preloader(`Memproses pesanan Anda...`),setTimeout(()=>{t.dialog.close(),t.dialog.alert(`Pesanan Anda berhasil diproses! Terima kasih telah berbelanja di TokoShop.`,`Checkout Sukses`,()=>{i=[],n(),t.views.main.router.navigate(`/slide/`)})},2e3)};return function(e){e.$;var t=e.$h;return e.$root,e.$f7,e.$f7route,e.$f7router,e.$theme,e.$update,e.$store,t`
     <div class="page" data-name="about">
 
         <div class="navbar navbar-center">
@@ -1419,7 +1419,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
             </div>
         </div>
     </div>
-`}}Fd.id=`c766971d87`,Fd.style=`
+`}}Fd.id=`f2bb3fe75a`,Fd.style=`
     /* Warna dasar default untuk menu Keranjang (Biru) */
     .custom-toolbar .tab-link.menu-keranjang {
         color: #2196f3 !important;
@@ -1710,7 +1710,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
         </div>
 
     </div>
-`}}Id.id=`88f266e5cb`,Id.style=`
+`}}Id.id=`5b73ea40ab`,Id.style=`
     /* Base Configuration */
     .dashboard-page {
         font-family: -apple-system, SF Pro Text, Roboto, sans-serif;
@@ -2150,7 +2150,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
             `}
         </div>
     </div>
-`}}Ld.id=`952ecdcb21`,Ld.style=`
+`}}Ld.id=`7c52fdde65`,Ld.style=`
     .dashboard-page {
         font-family: -apple-system, SF Pro Text, Roboto, sans-serif;
     }
@@ -2183,7 +2183,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
                 <div class="card glass-card main-profile-card">
                     <div class="card-content card-content-padding text-center">
                         <div class="avatar-edit-wrapper">
-                            <img src="/img/mupid.jpg" class="profile-avatar-large" alt="Mufid" />
+                            <img src="img/mupid.jpg" class="profile-avatar-large" alt="Mufid" />
                             <span class="badge color-blue edit-avatar-badge"><i class="f7-icons">camera_fill</i></span>
                         </div>
                         <h2 class="profile-name">Mufid Rofi' Ali</h2>
@@ -2332,7 +2332,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
         </div>
 
     </div>
-`}}Rd.id=`24840459e0`,Rd.style=`
+`}}Rd.id=`fbbd7a6552`,Rd.style=`
     /* Tambahan & Sinkronisasi CSS Gaya Glassmorphism */
 
     .main-profile-card {
@@ -2657,7 +2657,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
             `}
         </div>
     </div>
-`}}zd.id=`dc0d3eec65`;function Bd(e,{$f7:t,$update:n,$h:r}){let i=[],a=()=>{let e=i.find(e=>e.id===1);e?e.quantity+=1:i.push({id:1,name:`Smartwatch Premium`,price:115e4,quantity:1,image:`img/jam.jpg`}),n(),t.toast.create({text:`Smartwatch Premium dimasukkan ke keranjang!`,closeTimeout:1500,position:`bottom`,cssClass:`bg-color-blue`}).open()},o=()=>i.reduce((e,t)=>e+t.quantity,0),s=()=>i.reduce((e,t)=>e+t.price*t.quantity,0),c=(e,t)=>{let r=i.find(t=>t.id===e);r&&(r.quantity+=t,r.quantity<1&&(r.quantity=1),n())},l=e=>{let r=i.find(t=>t.id===e);r&&t.dialog.confirm(`Apakah Anda yakin ingin menghapus <b>${r.name}</b> dari keranjang?`,`Hapus Produk`,()=>{i=i.filter(t=>t.id!==e),n(),t.toast.create({text:`Produk berhasil dihapus`,closeTimeout:1500,position:`center`}).open()})},u=()=>{t.dialog.confirm(`Kosongkan seluruh isi keranjang belanja?`,`Konfirmasi`,()=>{i=[],n()})},d=()=>{t.dialog.preloader(`Memproses pesanan Anda...`),setTimeout(()=>{t.dialog.close(),t.dialog.alert(`Pesanan Anda berhasil diproses! Terima kasih telah berbelanja di TokoShop.`,`Checkout Sukses`,()=>{i=[],n(),t.views.main.router.navigate(`/slide/`)})},2e3)};return function(e){e.$;var t=e.$h;return e.$root,e.$f7,e.$f7route,e.$f7router,e.$theme,e.$update,e.$store,t`
+`}}zd.id=`c1358f74c4`;function Bd(e,{$f7:t,$update:n,$h:r}){let i=[],a=()=>{let e=i.find(e=>e.id===1);e?e.quantity+=1:i.push({id:1,name:`Smartwatch Premium`,price:115e4,quantity:1,image:`img/jam.jpg`}),n(),t.toast.create({text:`Smartwatch Premium dimasukkan ke keranjang!`,closeTimeout:1500,position:`bottom`,cssClass:`bg-color-blue`}).open()},o=()=>i.reduce((e,t)=>e+t.quantity,0),s=()=>i.reduce((e,t)=>e+t.price*t.quantity,0),c=(e,t)=>{let r=i.find(t=>t.id===e);r&&(r.quantity+=t,r.quantity<1&&(r.quantity=1),n())},l=e=>{let r=i.find(t=>t.id===e);r&&t.dialog.confirm(`Apakah Anda yakin ingin menghapus <b>${r.name}</b> dari keranjang?`,`Hapus Produk`,()=>{i=i.filter(t=>t.id!==e),n(),t.toast.create({text:`Produk berhasil dihapus`,closeTimeout:1500,position:`center`}).open()})},u=()=>{t.dialog.confirm(`Kosongkan seluruh isi keranjang belanja?`,`Konfirmasi`,()=>{i=[],n()})},d=()=>{t.dialog.preloader(`Memproses pesanan Anda...`),setTimeout(()=>{t.dialog.close(),t.dialog.alert(`Pesanan Anda berhasil diproses! Terima kasih telah berbelanja di TokoShop.`,`Checkout Sukses`,()=>{i=[],n(),t.views.main.router.navigate(`/slide/`)})},2e3)};return function(e){e.$;var t=e.$h;return e.$root,e.$f7,e.$f7route,e.$f7router,e.$theme,e.$update,e.$store,t`
     <div class="page dashboard-page" data-name="shop-page">
 
         <div class="navbar navbar-center">
@@ -2779,7 +2779,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
             `}
         </div>
     </div>
-`}}Bd.id=`6c429951e9`,Bd.style=`
+`}}Bd.id=`b0deb89807`,Bd.style=`
     .dashboard-page {
         font-family: -apple-system, SF Pro Text, Roboto, sans-serif;
     }
@@ -2905,7 +2905,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
             `}
         </div>
     </div>
-`}}Vd.id=`e1a535600a`,Vd.style=`
+`}}Vd.id=`89bf2596bb`,Vd.style=`
     .dashboard-page {
         font-family: -apple-system, SF Pro Text, Roboto, sans-serif;
     }
@@ -3031,7 +3031,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
             `}
         </div>
     </div>
-`}}Hd.id=`68f4783cbe`,Hd.style=`
+`}}Hd.id=`c03f7b6eca`,Hd.style=`
     .dashboard-page {
         font-family: -apple-system, SF Pro Text, Roboto, sans-serif;
     }
@@ -3157,7 +3157,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
             `}
         </div>
     </div>
-`}}Ud.id=`94213c1c5b`,Ud.style=`
+`}}Ud.id=`480b922ab3`,Ud.style=`
     .dashboard-page {
         font-family: -apple-system, SF Pro Text, Roboto, sans-serif;
     }
@@ -3283,7 +3283,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
             `}
         </div>
     </div>
-`}}Wd.id=`992d876592`,Wd.style=`
+`}}Wd.id=`dd8362290a`,Wd.style=`
     .dashboard-page {
         font-family: -apple-system, SF Pro Text, Roboto, sans-serif;
     }
@@ -3409,7 +3409,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
             `}
         </div>
     </div>
-`}}Gd.id=`e66cec225c`,Gd.style=`
+`}}Gd.id=`cf893ffdd6`,Gd.style=`
     .dashboard-page {
         font-family: -apple-system, SF Pro Text, Roboto, sans-serif;
     }
@@ -3574,7 +3574,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
         </div>
 
     </div>
-`}}Kd.id=`5deaa57a0d`,Kd.style=`
+`}}Kd.id=`63c3c118ed`,Kd.style=`
     /* Sinkronisasi Jarak Subnavbar F7 */
     .with-subnavbar {
         padding-top: 48px !important;
@@ -3886,7 +3886,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
         </div>
 
     </div>
-`}}qd.id=`b23662d311`,qd.style=`
+`}}qd.id=`37a9c4cdc9`,qd.style=`
     /* Tombol Tambah Desain Dashed Border */
     .quick-add-address {
         margin-bottom: 20px !important;
@@ -4174,7 +4174,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
         </div>
 
     </div>
-`}}Jd.id=`49a41de89b`,Jd.style=`
+`}}Jd.id=`b8c9d88603`,Jd.style=`
     /* Styling Area Mengubah Avatar */
     .avatar-change-card {
         margin: 4px 0 16px 0 !important;
@@ -4420,7 +4420,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
         </div>
 
     </div>
-`}}Yd.id=`9320fa1976`,Yd.style=`
+`}}Yd.id=`2106a5773f`,Yd.style=`
     /* Mengikuti standar CSS Glassmorphic dari halaman sebelumnya */
     .glass-form-list {
         margin: 0 0 24px 0 !important;
@@ -4588,7 +4588,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
 
         </div>
     </div>
-`}}Xd.id=`b13e10721d`,Xd.style=`
+`}}Xd.id=`b8c8ba5cf4`,Xd.style=`
     /* Base & Fonts */
     .forgot-page {
         font-family: -apple-system, SF Pro Text, Roboto, sans-serif;
@@ -4880,7 +4880,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
 
         </div>
     </div>
-`}}Zd.id=`1fdfb31334`,Zd.style=`
+`}}Zd.id=`3a7de478ef`,Zd.style=`
     /* Base Configuration & Fonts */
     .register-page {
         font-family: -apple-system, SF Pro Text, Roboto, sans-serif;
@@ -5268,7 +5268,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
         </div>
 
     </div>
-`}}Qd.id=`4ad9ec60e4`,Qd.style=`
+`}}Qd.id=`b876b95695`,Qd.style=`
     /* Base Configuration */
     .dashboard-page {
         font-family: -apple-system, SF Pro Text, Roboto, sans-serif;
@@ -5640,7 +5640,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
       </div>
     </div>
   </div>
-`}}$d.id=`88d5651048`,$d.style=`
+`}}$d.id=`e5ea7e7a4c`,$d.style=`
   p {
     margin: 10px 0;
   }
@@ -5670,7 +5670,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
       </div>
     </div>
   </div>
-`}}ef.id=`59be579000`;function tf(){return function(e){e.$;var t=e.$h;return e.$root,e.$f7,e.$f7route,e.$f7router,e.$theme,e.$update,e.$store,t`
+`}}ef.id=`d725df345d`;function tf(){return function(e){e.$;var t=e.$h;return e.$root,e.$f7,e.$f7route,e.$f7router,e.$theme,e.$update,e.$store,t`
 <div class="page">
   <div class="navbar">
     <div class="navbar-bg"></div>
@@ -5690,7 +5690,7 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
     </div>
   </div>
 </div>
-`}}tf.id=`d8291a910d`;var nf=[{path:`/`,component:Md},{path:`/about/`,component:Nd},{path:`/form/`,component:Pd},{path:`/dialog/`,component:Fd},{path:`/slide/`,component:Id},{path:`/geser/`,component:Ld},{path:`/jendela/`,component:Rd},{path:`/padel/`,component:zd},{path:`/bola/`,component:Bd},{path:`/bulutangkis/`,component:Vd},{path:`/adidas/`,component:Hd},{path:`/fore/`,component:Ud},{path:`/window/`,component:Wd},{path:`/tomorrow/`,component:Gd},{path:`/tiket/`,component:Kd},{path:`/alamat/`,component:qd},{path:`/ubah/`,component:Jd},{path:`/edit/`,component:Yd},{path:`/forgot/`,component:Xd},{path:`/register/`,component:Zd},{path:`/teknologi/`,component:Qd},{path:`/dynamic-route/blog/:blogId/post/:postId/`,component:$d},{path:`/request-and-load/user/:userId/`,async:function({router:e,to:t,resolve:n}){var r=e.app;r.preloader.show(),t.params.userId,setTimeout(function(){r.preloader.hide(),n({component:ef},{props:{user:{firstName:`Vladimir`,lastName:`Kharlampidi`,about:`Hello, i am creator of Framework7! Hope you like it!`,links:[{title:`Framework7 Website`,url:`http://framework7.io`},{title:`Framework7 Forum`,url:`http://forum.framework7.io`}]}}})},1e3)}},{path:`(.*)`,component:tf}],rf=Fa({state:{products:[{id:`1`,title:`Apple iPhone 8`,description:`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi tempora similique reiciendis, error nesciunt vero, blanditiis pariatur dolor, minima sed sapiente rerum, dolorem corrupti hic modi praesentium unde saepe perspiciatis.`},{id:`2`,title:`Apple iPhone 8 Plus`,description:`Velit odit autem modi saepe ratione totam minus, aperiam, labore quia provident temporibus quasi est ut aliquid blanditiis beatae suscipit odio vel! Nostrum porro sunt sint eveniet maiores, dolorem itaque!`},{id:`3`,title:`Apple iPhone X`,description:`Expedita sequi perferendis quod illum pariatur aliquam, alias laboriosam! Vero blanditiis placeat, mollitia necessitatibus reprehenderit. Labore dolores amet quos, accusamus earum asperiores officiis assumenda optio architecto quia neque, quae eum.`}]},getters:{products({state:e}){return e.products}},actions:{addProduct({state:e},t){e.products=[...e.products,t]}}});function af(e,{$f7:t,$update:n}){let r=``,i=``,a=e=>{r=e.target.value,n()},o=e=>{i=e.target.value,n()},s=()=>{t.dialog.alert(`Username: `+r+`<br/>Password: `+i,()=>{t.loginScreen.close()})};return function(e){e.$;var t=e.$h;return e.$root,e.$f7,e.$f7route,e.$f7router,e.$theme,e.$update,e.$store,t`
+`}}tf.id=`ed3852b9b0`;var nf=[{path:`/`,component:Md},{path:`/about/`,component:Nd},{path:`/form/`,component:Pd},{path:`/dialog/`,component:Fd},{path:`/slide/`,component:Id},{path:`/geser/`,component:Ld},{path:`/jendela/`,component:Rd},{path:`/padel/`,component:zd},{path:`/bola/`,component:Bd},{path:`/bulutangkis/`,component:Vd},{path:`/adidas/`,component:Hd},{path:`/fore/`,component:Ud},{path:`/window/`,component:Wd},{path:`/tomorrow/`,component:Gd},{path:`/tiket/`,component:Kd},{path:`/alamat/`,component:qd},{path:`/ubah/`,component:Jd},{path:`/edit/`,component:Yd},{path:`/forgot/`,component:Xd},{path:`/register/`,component:Zd},{path:`/teknologi/`,component:Qd},{path:`/dynamic-route/blog/:blogId/post/:postId/`,component:$d},{path:`/request-and-load/user/:userId/`,async:function({router:e,to:t,resolve:n}){var r=e.app;r.preloader.show(),t.params.userId,setTimeout(function(){r.preloader.hide(),n({component:ef},{props:{user:{firstName:`Vladimir`,lastName:`Kharlampidi`,about:`Hello, i am creator of Framework7! Hope you like it!`,links:[{title:`Framework7 Website`,url:`http://framework7.io`},{title:`Framework7 Forum`,url:`http://forum.framework7.io`}]}}})},1e3)}},{path:`(.*)`,component:tf}],rf=Fa({state:{products:[{id:`1`,title:`Apple iPhone 8`,description:`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi tempora similique reiciendis, error nesciunt vero, blanditiis pariatur dolor, minima sed sapiente rerum, dolorem corrupti hic modi praesentium unde saepe perspiciatis.`},{id:`2`,title:`Apple iPhone 8 Plus`,description:`Velit odit autem modi saepe ratione totam minus, aperiam, labore quia provident temporibus quasi est ut aliquid blanditiis beatae suscipit odio vel! Nostrum porro sunt sint eveniet maiores, dolorem itaque!`},{id:`3`,title:`Apple iPhone X`,description:`Expedita sequi perferendis quod illum pariatur aliquam, alias laboriosam! Vero blanditiis placeat, mollitia necessitatibus reprehenderit. Labore dolores amet quos, accusamus earum asperiores officiis assumenda optio architecto quia neque, quae eum.`}]},getters:{products({state:e}){return e.products}},actions:{addProduct({state:e},t){e.products=[...e.products,t]}}});function af(e,{$f7:t,$update:n}){let r=``,i=``,a=e=>{r=e.target.value,n()},o=e=>{i=e.target.value,n()},s=()=>{t.dialog.alert(`Username: `+r+`<br/>Password: `+i,()=>{t.loginScreen.close()})};return function(e){e.$;var t=e.$h;return e.$root,e.$f7,e.$f7route,e.$f7router,e.$theme,e.$update,e.$store,t`
   <div id="app">
 
     <!-- Left panel with cover effect-->
@@ -5795,4 +5795,4 @@ var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],en
     </div>
 
   </div>
-`}}af.id=`f53f448987`;var of=X();new Ad({name:`Toko Online`,theme:`auto`,colors:{primary:`#007aff`},darkMode:!0,el:`#app`,component:af,store:rf,routes:nf,input:{scrollIntoViewOnFocus:of.cordova,scrollIntoViewCentered:of.cordova},statusbar:{iosOverlaysWebView:!0,androidOverlaysWebView:!1},on:{init:function(){var e=this;e.device.cordova&&jd.init(e)}}});
+`}}af.id=`37401fedc4`;var of=X();new Ad({name:`Toko Online`,theme:`auto`,colors:{primary:`#007aff`},darkMode:!0,el:`#app`,component:af,store:rf,routes:nf,input:{scrollIntoViewOnFocus:of.cordova,scrollIntoViewCentered:of.cordova},statusbar:{iosOverlaysWebView:!0,androidOverlaysWebView:!1},on:{init:function(){var e=this;e.device.cordova&&jd.init(e)}}});
